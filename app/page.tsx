@@ -1,3 +1,10 @@
+import { Button } from "@/src/shared/ui";
+
 export default function Home() {
-  return <div>CoursesTop</div>;
+  return (
+    <div>
+      CoursesTop
+      <Button />
+    </div>
+  );
 }
