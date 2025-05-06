@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 22px 26px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.footerRight {
+  display: flex;
+  gap: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+  .footerRight {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

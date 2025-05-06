@@ -1,4 +1,4 @@
-import { IconType } from "@/src/shared/ui";
+import { IconType } from '@/src/shared/ui';
 
 export interface TopMenuItem {
   name: string;

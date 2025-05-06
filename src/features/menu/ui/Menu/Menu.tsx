@@ -1,16 +1,22 @@
-import { TopMenuItem } from "@/src/shared/ui";
-import { topMenu } from "../../model/topMenu";
+'use client';
 
-export const Menu = () => {
+import { topMenu } from '../../model/topMenu';
+import { TopMenuItem } from '../TopMenuItem/TopMenuItem';
+import { MenuProps } from './Menu.props';
+
+export function Menu({ secondLevelMenuItems }: MenuProps) {
   return (
     <nav>
-      {topMenu.map((menuItem) => (
-        <TopMenuItem
-          key={menuItem.id}
-          name={menuItem.name}
-          icon={menuItem.icon}
-        />
-      ))}
+      <ul>
+        {topMenu.map((menuItem, index) => (
+          <TopMenuItem
+            secondMenuItem={secondLevelMenuItems[index] || undefined}
+            key={menuItem.id}
+            name={menuItem.name}
+            icon={menuItem.icon}
+          />
+        ))}
+      </ul>
     </nav>
   );
-};
+}

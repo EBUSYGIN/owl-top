@@ -1,9 +1,12 @@
+.menuItem {
+  margin-bottom: 20px;
+}
+
 .item {
   font-weight: 500;
   font-size: 18px;
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 20px;
   color: var(--gray);
 }

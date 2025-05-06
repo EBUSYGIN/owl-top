@@ -1,6 +1,14 @@
 .sidebar {
   padding: 0 22px;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
   gap: 22px;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 7px;
 }
