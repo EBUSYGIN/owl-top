@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
-import "./globals.css";
-import cn from "classnames";
+import { openSans } from '@/src/app/styles/fonts';
+import '@/src/app/styles/global.css';
 
-const font = Open_Sans({
-  subsets: ["latin", "cyrillic"],
-});
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Courses Top",
-  description: "Best top",
+  title: {
+    template: '%s | Courses Top',
+    default: 'Courses Top',
+  },
+  description:
+    'Courses Top — платформа для оценки и рейтинга курсов. Читайте отзывы, ставьте оценки, анализируйте плюсы и минусы. Выбирайте лучшие курсы на основе мнений студентов!',
 };
 
 export default function RootLayout({
@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={cn(font.className)}>{children}</body>
+    <html lang='ru'>
+      <body className={openSans.className}>{children}</body>
     </html>
   );
 }

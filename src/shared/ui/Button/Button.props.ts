@@ -6,7 +6,7 @@ export interface ButtonProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  size: 's' | 'm' | 'l';
-  appearrance: 'primary' | 'ghost';
-  icon: IconType;
+  size?: 's' | 'm' | 'l';
+  appearance?: 'primary' | 'ghost';
+  icon?: IconType;
 }
