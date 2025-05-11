@@ -1,15 +1,15 @@
-"use client";
-import cn from "classnames";
-import { Icon } from "../Icon/Icon";
-import { ButtonProps } from "./Button.props";
+'use client';
+import cn from 'classnames';
+import { Icon } from '../Icon/Icon';
+import { ButtonProps } from './Button.props';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
 export function Button({
   children,
   className,
-  appearrance = "primary",
-  size = "m",
+  appearance = 'primary',
+  size = 'm',
   icon,
   ...props
 }: ButtonProps) {
@@ -17,12 +17,7 @@ export function Button({
 
   return (
     <button
-      className={cn(
-        styles.button,
-        styles[size],
-        styles[appearrance],
-        className
-      )}
+      className={cn(styles.button, styles[size], styles[appearance], className)}
       {...props}
     >
       {IconComponent && <IconComponent className={styles.icon} />}

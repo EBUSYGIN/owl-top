@@ -4,6 +4,8 @@
   --black: #3b434e;
   --light-gray: #ebebeb;
   --gray: #787d85;
+  --border-gray: #dfdfdf;
+  --background-gray: #f5f6f8;
 }
 
 html {
@@ -38,6 +40,10 @@ blockquote,
 dl,
 dd {
   margin: 0;
+}
+
+body {
+  background-color: var(--background-gray);
 }
 
 ul {
