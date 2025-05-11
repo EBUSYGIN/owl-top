@@ -1,6 +1,6 @@
-import { Footer, Sidebar } from '@/src/widgets';
+import { Footer, Sidebar } from "@/src/widgets";
 
-import styles from './layout.module.css';
+import styles from "./layout.module.css";
 
 export default async function Layout({
   children,
@@ -9,9 +9,8 @@ export default async function Layout({
 }>) {
   return (
     <div className={styles.layout}>
-      <header>Хедер</header>
       <div className={styles.content}>
-        <Sidebar secondLevelMenuItems={[]} />
+        <Sidebar />
         <main>{children}</main>
       </div>
       <Footer />

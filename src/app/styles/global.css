@@ -4,12 +4,12 @@
   --black: #3b434e;
   --light-gray: #ebebeb;
   --gray: #787d85;
+  --border-gray: #dfdfdf;
   --background-gray: #f5f6f8;
 }
 
 html {
   box-sizing: border-box;
-  height: 100%;
 }
 
 *,
@@ -44,7 +44,6 @@ dd {
 
 body {
   background-color: var(--background-gray);
-  height: 100%;
 }
 
 ul {

@@ -1,3 +1,1 @@
-export * from './Menu/Menu';
-export * from './TopMenuItem/TopMenuItem';
-export * from './SecondLevelMenuItem/SecondLevelMenuItem';
+export * from "./Menu/Menu";

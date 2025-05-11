@@ -3,22 +3,26 @@ import { TopMenuItem } from "../types";
 export const topMenu: TopMenuItem[] = [
   {
     name: "Курсы",
-    id: 1,
+    path: "courses",
+    id: 0,
     icon: "GraduationHat",
   },
   {
     name: "Сервисы",
-    id: 2,
+    id: 1,
     icon: "Cloud",
+    path: "services",
   },
   {
     name: "Книги",
-    id: 3,
+    id: 2,
     icon: "Book",
+    path: "books",
   },
   {
     name: "Товары",
-    id: 4,
+    id: 3,
     icon: "Box",
+    path: "products",
   },
 ];

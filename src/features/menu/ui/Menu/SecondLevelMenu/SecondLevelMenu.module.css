@@ -1,0 +1,21 @@
+.thirdLevelList {
+  /* Анимационные свойства */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(
+    -10px
+  ); /* Добавляем небольшой сдвиг для эффекта "появления" */
+  transition: opacity 0.4s ease-out, max-height 0.6s ease-out,
+    transform 0.4s ease-out;
+}
+
+.thirdLevelList:last-child {
+  margin-bottom: 10px;
+}
+
+.active {
+  opacity: 1;
+  max-height: 1000px; /* Увеличиваем если нужно */
+  transform: translateY(0);
+}

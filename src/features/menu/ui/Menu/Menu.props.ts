@@ -1,5 +1,5 @@
-import { SecondMenuItem } from '../../types';
+import { MenuItem } from "../../types";
 
 export interface MenuProps {
-  secondLevelMenuItems: Array<SecondMenuItem[] | undefined>;
+  data: MenuItem[][];
 }

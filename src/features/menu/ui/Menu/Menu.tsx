@@ -1,22 +1,21 @@
-'use client';
+import { topMenu } from "../../model/topMenu";
+import { MenuProps } from "./Menu.props";
+import { MenuContextProvider } from "./MenuContext/MenuContext";
+import { TopMenuItem } from "./TopMenuItem/TopMenuItem";
 
-import { topMenu } from '../../model/topMenu';
-import { TopMenuItem } from '../TopMenuItem/TopMenuItem';
-import { MenuProps } from './Menu.props';
-
-export function Menu({ secondLevelMenuItems }: MenuProps) {
+export function Menu({ data }: MenuProps) {
   return (
-    <nav>
+    <MenuContextProvider>
       <ul>
-        {topMenu.map((menuItem, index) => (
+        {topMenu.map((topMenuItem, index) => (
           <TopMenuItem
-            secondMenuItem={secondLevelMenuItems[index] || undefined}
-            key={menuItem.id}
-            name={menuItem.name}
-            icon={menuItem.icon}
+            key={topMenuItem.id}
+            secondLevelMenu={data[index] || []}
+            icon={topMenuItem.icon}
+            category={topMenuItem.name}
           />
         ))}
       </ul>
-    </nav>
+    </MenuContextProvider>
   );
 }
