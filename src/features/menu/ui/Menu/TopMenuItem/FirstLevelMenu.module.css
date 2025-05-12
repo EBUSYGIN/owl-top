@@ -1,0 +1,19 @@
+.icon {
+  color: var(--gray);
+}
+
+.secondLevelList {
+  padding-left: 30px;
+  margin-left: 12px;
+  border-left: 1px solid var(--border-gray);
+
+  display: none;
+}
+
+.secondLevelList:last-child {
+  margin-bottom: 25px;
+}
+
+.active {
+  display: block;
+}

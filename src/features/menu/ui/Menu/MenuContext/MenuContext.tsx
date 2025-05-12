@@ -34,11 +34,20 @@ export function MenuContextProvider({ children }: { children: ReactNode }) {
     activeThird: null,
   });
 
+  const setFirstActive = useCallback((category: string | null) => {
+    setActive((prev) => ({
+      activeFirst: prev.activeFirst === category ? null : category,
+      activeSecond: null,
+      activeThird: null,
+    }));
+  }, []);
+
   const setSecondActive = useCallback(
     (category: string) =>
       setActive((prev) => ({
         ...prev,
         activeSecond: prev.activeSecond === category ? null : category,
+        activeThird: null,
       })),
     []
   );
@@ -46,13 +55,6 @@ export function MenuContextProvider({ children }: { children: ReactNode }) {
     setActive((prev) => ({
       ...prev,
       activeThird: prev.activeThird === category ? null : category,
-    }));
-  }, []);
-
-  const setFirstActive = useCallback((category: string | null) => {
-    setActive((prev) => ({
-      ...prev,
-      activeFirst: prev.activeFirst === category ? null : category,
     }));
   }, []);
 

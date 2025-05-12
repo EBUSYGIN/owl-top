@@ -2,32 +2,23 @@
 
 import cn from "classnames";
 
-import { TopMenuItemProps } from "./TopMenuItem.props";
+import { FirstLevelMenuProps } from "./FirstLevelMenu.props";
 
-import styles from "./TopMenuItem.module.css";
+import styles from "./FirstLevelMenu.module.css";
 import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
 
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 
-export function TopMenuItem({
+export function FirstLevelMenu({
   secondLevelMenu,
   icon,
   category,
-}: TopMenuItemProps) {
+}: FirstLevelMenuProps) {
   const { activeFirst } = useContext(MenuContext);
   const { setFirstActive } = useContext(MenuSetterContext);
   const activeItem = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!activeItem.current) return;
-
-    activeItem.current.scrollIntoView({
-      block: "center",
-      behavior: "smooth",
-    });
-  }, [activeFirst]);
 
   return (
     <li>
@@ -38,17 +29,20 @@ export function TopMenuItem({
         active={activeFirst === category}
         onClick={() => setFirstActive(category)}
         ref={activeItem}
+        aria-expanded={activeFirst === category}
+        aria-controls="second-level-menu"
       />
       <ul
         className={cn(styles.secondLevelList, {
           [styles.active]: activeFirst === category,
         })}
+        id="second-level-menu"
       >
         {secondLevelMenu.length > 0 ? (
           secondLevelMenu.map((item) => (
             <SecondLevelMenu
               key={item._id.secondCategory}
-              secondLevelMenuItem={item._id.secondCategory}
+              category={item._id.secondCategory}
               thirdLevelMenu={item.pages}
             />
           ))

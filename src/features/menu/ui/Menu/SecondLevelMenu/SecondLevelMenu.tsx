@@ -9,41 +9,29 @@ import { useContext, useEffect, useRef } from "react";
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 
 export function SecondLevelMenu({
-  secondLevelMenuItem,
+  category,
   thirdLevelMenu,
 }: SecondLevelMenuProps) {
   const { setSecondActive } = useContext(MenuSetterContext);
   const { activeSecond } = useContext(MenuContext);
   const activeItem = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (!activeItem.current) return;
-
-    activeItem.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  }, [activeSecond]);
-
   return (
     <li>
       <MenuTitle
         appearance="secondLevel"
-        category={secondLevelMenuItem}
-        active={activeSecond === secondLevelMenuItem}
-        onClick={() => setSecondActive(secondLevelMenuItem)}
+        category={category}
+        active={activeSecond === category}
+        onClick={() => setSecondActive(category)}
         ref={activeItem}
       />
       <ul
         className={cn(styles.thirdLevelList, {
-          [styles.active]: activeSecond === secondLevelMenuItem,
+          [styles.active]: activeSecond === category,
         })}
       >
         {thirdLevelMenu.map((thirdLevel) => (
-          <ThirdLevelMenu
-            key={thirdLevel._id}
-            thirdLevelMenu={thirdLevel.title}
-          />
+          <ThirdLevelMenu key={thirdLevel._id} category={thirdLevel.title} />
         ))}
       </ul>
     </li>

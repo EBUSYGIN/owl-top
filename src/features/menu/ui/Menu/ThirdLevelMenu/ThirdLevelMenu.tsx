@@ -3,10 +3,10 @@ import { ThirdLevelMenuProps } from "./ThirdLevelMenu.props";
 
 import styles from "./ThirdLevelMenu.module.css";
 
-export function ThirdLevelMenu({ thirdLevelMenu }: ThirdLevelMenuProps) {
+export function ThirdLevelMenu({ category }: ThirdLevelMenuProps) {
   return (
     <li className={styles.thirdLevel}>
-      <Link href="/">{thirdLevelMenu}</Link>
+      <Link href="/">{category}</Link>
     </li>
   );
 }
