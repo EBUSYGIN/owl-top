@@ -10,6 +10,7 @@ import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
 import { useContext, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function FirstLevelMenu({
   secondLevelMenu,
@@ -32,24 +33,47 @@ export function FirstLevelMenu({
         aria-expanded={activeFirst === category}
         aria-controls="second-level-menu"
       />
-      <ul
-        className={cn(styles.secondLevelList, {
-          [styles.active]: activeFirst === category,
-        })}
-        id="second-level-menu"
-      >
-        {secondLevelMenu.length > 0 ? (
-          secondLevelMenu.map((item) => (
-            <SecondLevelMenu
-              key={item._id.secondCategory}
-              category={item._id.secondCategory}
-              thirdLevelMenu={item.pages}
-            />
-          ))
-        ) : (
-          <p>Нет элементов меню</p>
+
+      <AnimatePresence>
+        {activeFirst === category && (
+          <motion.ul
+            className={cn(styles.secondLevelList, {
+              [styles.active]: activeFirst === category,
+            })}
+            id="second-level-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+              transition: {
+                height: { duration: 0.3, ease: "easeOut" },
+                opacity: { duration: 0.2, ease: "linear" },
+              },
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+              transition: {
+                height: { duration: 0.25, ease: "easeIn" },
+                opacity: { duration: 0.15, ease: "linear" },
+              },
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {secondLevelMenu.length > 0 ? (
+              secondLevelMenu.map((item) => (
+                <SecondLevelMenu
+                  key={item._id.secondCategory}
+                  category={item._id.secondCategory}
+                  thirdLevelMenu={item.pages}
+                />
+              ))
+            ) : (
+              <p>Нет элементов меню</p>
+            )}
+          </motion.ul>
         )}
-      </ul>
+      </AnimatePresence>
     </li>
   );
 }

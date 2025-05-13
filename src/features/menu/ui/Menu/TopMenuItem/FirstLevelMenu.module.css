@@ -7,13 +7,11 @@
   margin-left: 12px;
   border-left: 1px solid var(--border-gray);
 
-  display: none;
+  overflow: hidden;
+  transform-style: preserve-3d; /* Улучшает производительность */
+  backface-visibility: hidden; /* Убирает артефакты */
 }
 
 .secondLevelList:last-child {
   margin-bottom: 25px;
-}
-
-.active {
-  display: block;
 }
