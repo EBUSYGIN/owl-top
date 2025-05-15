@@ -9,6 +9,7 @@ export function MenuTitle({
   icon,
   className,
   active,
+  children,
   ...props
 }: MenuTitleProps) {
   const IconComponent = icon ? Icon[icon] : null;
@@ -20,6 +21,7 @@ export function MenuTitle({
     >
       {IconComponent && <IconComponent />}
       {category}
+      {children ? children : ""}
     </button>
   );
 }

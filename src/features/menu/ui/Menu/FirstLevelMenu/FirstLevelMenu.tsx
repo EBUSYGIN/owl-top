@@ -9,17 +9,19 @@ import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
 
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function FirstLevelMenu({
   secondLevelMenu,
   icon,
   category,
+  path,
 }: FirstLevelMenuProps) {
   const { activeFirst } = useContext(MenuContext);
-  const { setFirstActive } = useContext(MenuSetterContext);
-  const activeItem = useRef<HTMLButtonElement>(null);
+  const { setActiveCategory } = useContext(MenuSetterContext);
+
+  const active = activeFirst.includes(path);
 
   return (
     <li>
@@ -27,19 +29,18 @@ export function FirstLevelMenu({
         appearance="topLevel"
         category={category}
         icon={icon}
-        active={activeFirst === category}
-        onClick={() => setFirstActive(category)}
-        ref={activeItem}
-        aria-expanded={activeFirst === category}
+        active={active}
+        onClick={() =>
+          setActiveCategory({ path, categoryLevel: "activeFirst" })
+        }
+        aria-expanded={active}
         aria-controls="second-level-menu"
       />
 
       <AnimatePresence>
-        {activeFirst === category && (
+        {active && (
           <motion.ul
-            className={cn(styles.secondLevelList, {
-              [styles.active]: activeFirst === category,
-            })}
+            className={cn(styles.secondLevelList)}
             id="second-level-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{

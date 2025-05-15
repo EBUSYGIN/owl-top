@@ -1,7 +1,7 @@
 import { topMenu } from "../../model/topMenu";
 import { MenuProps } from "./Menu.props";
 import { MenuContextProvider } from "./MenuContext/MenuContext";
-import { FirstLevelMenu } from "./TopMenuItem/FirstLevelMenu";
+import { FirstLevelMenu } from "./FirstLevelMenu/FirstLevelMenu";
 
 export function Menu({ data }: MenuProps) {
   return (
@@ -13,6 +13,7 @@ export function Menu({ data }: MenuProps) {
             secondLevelMenu={data[index] || []}
             icon={topMenuItem.icon}
             category={topMenuItem.name}
+            path={topMenuItem.path}
           />
         ))}
       </ul>

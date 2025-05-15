@@ -7,4 +7,5 @@ export interface FirstLevelMenuProps
   secondLevelMenu: MenuItem[];
   icon: IconType;
   category: string;
+  path: string;
 }
