@@ -16,22 +16,24 @@ export function SecondLevelMenu({
   const { setActiveCategory } = useContext(MenuSetterContext);
   const { activeSecond } = useContext(MenuContext);
 
+  const active = activeSecond.includes(category);
+
   return (
     <li>
       <MenuTitle
         appearance="secondLevel"
         category={category}
-        active={activeSecond.includes(category)}
+        active={active}
         onClick={() =>
           setActiveCategory({ path: category, categoryLevel: "activeSecond" })
         }
       />
 
       <AnimatePresence>
-        {activeSecond.includes(category) && (
+        {active && (
           <motion.ul
             className={cn(styles.thirdLevelList, {
-              [styles.active]: activeSecond.includes(category),
+              [styles.active]: active,
             })}
             initial={{ opacity: 0, height: 0 }}
             animate={{
@@ -52,13 +54,17 @@ export function SecondLevelMenu({
             }}
             transition={{ duration: 0.3 }}
           >
-            {thirdLevelMenu.map((thirdLevel) => (
-              <ThirdLevelMenu
-                key={thirdLevel._id}
-                category={thirdLevel.title}
-                alias={thirdLevel.alias}
-              />
-            ))}
+            {thirdLevelMenu.length > 0 ? (
+              thirdLevelMenu.map((thirdLevel) => (
+                <ThirdLevelMenu
+                  key={thirdLevel._id}
+                  category={thirdLevel.title}
+                  alias={thirdLevel.alias}
+                />
+              ))
+            ) : (
+              <p className={styles.noItem}>Нет элементов</p>
+            )}
           </motion.ul>
         )}
       </AnimatePresence>

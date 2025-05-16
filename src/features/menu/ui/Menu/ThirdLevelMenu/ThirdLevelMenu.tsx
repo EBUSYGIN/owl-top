@@ -3,14 +3,16 @@ import { ThirdLevelMenuProps } from "./ThirdLevelMenu.props";
 
 import styles from "./ThirdLevelMenu.module.css";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { MenuContext } from "../MenuContext/MenuContext";
 
 export function ThirdLevelMenu({ category, alias }: ThirdLevelMenuProps) {
-  const pathname = usePathname();
-  console.log(pathname);
+  const { activeFirst } = useContext(MenuContext);
+  // const pathname = usePathname();
 
   return (
     <li className={styles.thirdLevel}>
-      <Link href={`/courses/${alias}`}>{category}</Link>
+      <Link href={`${activeFirst?.at(-1)}/${alias}`}>{category}</Link>
     </li>
   );
 }

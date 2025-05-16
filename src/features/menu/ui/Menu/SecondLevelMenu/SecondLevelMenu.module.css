@@ -9,3 +9,10 @@
 .active {
   display: block;
 }
+
+.noItem {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--gray);
+}

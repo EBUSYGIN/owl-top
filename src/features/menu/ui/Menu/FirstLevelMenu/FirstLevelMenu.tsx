@@ -70,7 +70,7 @@ export function FirstLevelMenu({
                 />
               ))
             ) : (
-              <p>Нет элементов меню</p>
+              <p className={styles.noItem}>Нет элементов меню</p>
             )}
           </motion.ul>
         )}

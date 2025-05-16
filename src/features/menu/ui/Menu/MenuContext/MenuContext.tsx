@@ -34,8 +34,6 @@ export function MenuContextProvider({ children }: { children: ReactNode }) {
     []
   );
 
-  console.log(active);
-
   return (
     <MenuContext.Provider value={active}>
       <MenuSetterContext.Provider value={{ setActiveCategory }}>
