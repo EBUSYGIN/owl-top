@@ -1,9 +1,9 @@
-import { TopMenuItem } from "../types";
+import { IMenuContext, TopMenuItem } from "../types";
 
 export const topMenu: TopMenuItem[] = [
   {
     name: "Курсы",
-    path: "courses",
+    path: "/courses",
     id: 0,
     icon: "GraduationHat",
   },
@@ -11,18 +11,24 @@ export const topMenu: TopMenuItem[] = [
     name: "Сервисы",
     id: 1,
     icon: "Cloud",
-    path: "services",
+    path: "/services",
   },
   {
     name: "Книги",
     id: 2,
     icon: "Book",
-    path: "books",
+    path: "/books",
   },
   {
     name: "Товары",
     id: 3,
     icon: "Box",
-    path: "products",
+    path: "/products",
   },
 ];
+
+export const MenuContextModel: IMenuContext = {
+  activeFirst: [],
+  activeSecond: [],
+  activeThird: [],
+};

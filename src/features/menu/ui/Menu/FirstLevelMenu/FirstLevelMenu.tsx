@@ -1,40 +1,47 @@
+"use client";
+
 import cn from "classnames";
 
-import { SecondLevelMenuProps } from "./SecondLevelMenu.props";
+import { FirstLevelMenuProps } from "./FirstLevelMenu.props";
 
-import styles from "./SecondLevelMenu.module.css";
-import { ThirdLevelMenu } from "../ThirdLevelMenu/ThirdLevelMenu";
+import styles from "./FirstLevelMenu.module.css";
+import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
+
+import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
 import { useContext } from "react";
-import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { AnimatePresence, motion } from "framer-motion";
 
-export function SecondLevelMenu({
+export function FirstLevelMenu({
+  secondLevelMenu,
+  icon,
   category,
-  thirdLevelMenu,
-}: SecondLevelMenuProps) {
+  path,
+}: FirstLevelMenuProps) {
+  const { activeFirst } = useContext(MenuContext);
   const { setActiveCategory } = useContext(MenuSetterContext);
-  const { activeSecond } = useContext(MenuContext);
 
-  const active = activeSecond.includes(category);
+  const active = activeFirst.includes(path);
 
   return (
     <li>
       <MenuTitle
-        appearance="secondLevel"
+        appearance="topLevel"
         category={category}
+        icon={icon}
         active={active}
         onClick={() =>
-          setActiveCategory({ path: category, categoryLevel: "activeSecond" })
+          setActiveCategory({ path, categoryLevel: "activeFirst" })
         }
+        aria-expanded={active}
+        aria-controls="second-level-menu"
       />
 
       <AnimatePresence>
         {active && (
           <motion.ul
-            className={cn(styles.thirdLevelList, {
-              [styles.active]: active,
-            })}
+            className={cn(styles.secondLevelList)}
+            id="second-level-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{
               opacity: 1,
@@ -54,16 +61,16 @@ export function SecondLevelMenu({
             }}
             transition={{ duration: 0.3 }}
           >
-            {thirdLevelMenu.length > 0 ? (
-              thirdLevelMenu.map((thirdLevel) => (
-                <ThirdLevelMenu
-                  key={thirdLevel._id}
-                  category={thirdLevel.title}
-                  alias={thirdLevel.alias}
+            {secondLevelMenu.length > 0 ? (
+              secondLevelMenu.map((item) => (
+                <SecondLevelMenu
+                  key={item._id.secondCategory}
+                  category={item._id.secondCategory}
+                  thirdLevelMenu={item.pages}
                 />
               ))
             ) : (
-              <p className={styles.noItem}>Нет элементов</p>
+              <p className={styles.noItem}>Нет элементов меню</p>
             )}
           </motion.ul>
         )}

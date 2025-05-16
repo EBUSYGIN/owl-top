@@ -1,6 +1,6 @@
 import { MenuItem, Page } from "../../../types";
 
 export interface SecondLevelMenuProps {
-  secondLevelMenuItem: string;
+  category: string;
   thirdLevelMenu: Page[];
 }

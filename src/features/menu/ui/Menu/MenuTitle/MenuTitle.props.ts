@@ -6,7 +6,7 @@ export interface MenuTitleProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  category: string;
+  category?: string;
   appearance: "topLevel" | "secondLevel" | "thirdLevel";
   icon?: IconType;
   active: boolean;

@@ -1,0 +1,28 @@
+.icon {
+  color: var(--gray);
+}
+
+.secondLevelList {
+  padding-left: 30px;
+  margin-left: 12px;
+  border-left: 1px solid var(--border-gray);
+
+  overflow: hidden;
+  transform-style: preserve-3d; /* Улучшает производительность */
+  backface-visibility: hidden; /* Убирает артефакты */
+}
+
+.secondLevelList:last-child {
+  margin-bottom: 25px;
+}
+
+.noItem {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}

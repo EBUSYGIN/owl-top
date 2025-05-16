@@ -1,68 +1,42 @@
 "use client";
 
+import { createContext, ReactNode, useCallback, useState } from "react";
 import {
-  Children,
-  createContext,
-  ReactNode,
-  useCallback,
-  useState,
-} from "react";
-import { IMenuContext, IMenuSetterContextType } from "../../../types";
+  CategorySetterParams,
+  IMenuContext,
+  IMenuSetterContextType,
+} from "../../../types";
+import { MenuContextModel } from "../../../model/topMenu";
 
-export const MenuContext = createContext<IMenuContext>({
-  activeFirst: null,
-  activeSecond: null,
-  activeThird: null,
-});
+export const MenuContext = createContext<IMenuContext>(MenuContextModel);
+
 export const MenuSetterContext = createContext<IMenuSetterContextType>({
-  setFirstActive: () => {
-    throw new Error("MenuSetterContext not initialized");
-  },
-
-  setSecondActive: () => {
-    throw new Error("MenuSetterContext not initialized");
-  },
-  setThirdActive: () => {
+  setActiveCategory: () => {
     throw new Error("MenuSetterContext not initialized");
   },
 });
 
 export function MenuContextProvider({ children }: { children: ReactNode }) {
-  const [active, setActive] = useState<IMenuContext>({
-    activeFirst: null,
-    activeSecond: null,
-    activeThird: null,
-  });
+  const [active, setActive] = useState<IMenuContext>(MenuContextModel);
 
-  const setSecondActive = useCallback(
-    (category: string) =>
-      setActive((prev) => ({
-        ...prev,
-        activeSecond: prev.activeSecond === category ? null : category,
-      })),
+  const setActiveCategory = useCallback(
+    ({ path: categoryOrPath, categoryLevel }: CategorySetterParams) => {
+      setActive((prev) => {
+        const isActive = prev[categoryLevel].includes(categoryOrPath);
+        return {
+          ...prev,
+          [categoryLevel]: isActive
+            ? prev[categoryLevel].filter((item) => item !== categoryOrPath)
+            : [...prev[categoryLevel], categoryOrPath],
+        };
+      });
+    },
     []
   );
-  const setThirdActive = useCallback((category: string | null) => {
-    setActive((prev) => ({
-      ...prev,
-      activeThird: prev.activeThird === category ? null : category,
-    }));
-  }, []);
-
-  const setFirstActive = useCallback((category: string | null) => {
-    setActive((prev) => ({
-      ...prev,
-      activeFirst: prev.activeFirst === category ? null : category,
-    }));
-  }, []);
-
-  console.log(active);
 
   return (
     <MenuContext.Provider value={active}>
-      <MenuSetterContext.Provider
-        value={{ setSecondActive, setThirdActive, setFirstActive }}
-      >
+      <MenuSetterContext.Provider value={{ setActiveCategory }}>
         {children}
       </MenuSetterContext.Provider>
     </MenuContext.Provider>
