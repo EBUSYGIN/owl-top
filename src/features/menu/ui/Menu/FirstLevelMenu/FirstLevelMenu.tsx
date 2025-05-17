@@ -8,8 +8,7 @@ import styles from "./FirstLevelMenu.module.css";
 import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
 
 import { MenuTitle } from "../MenuTitle/MenuTitle";
-import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
-import { useContext } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function FirstLevelMenu({
@@ -18,10 +17,7 @@ export function FirstLevelMenu({
   category,
   path,
 }: FirstLevelMenuProps) {
-  const { activeFirst } = useContext(MenuContext);
-  const { setActiveCategory } = useContext(MenuSetterContext);
-
-  const active = activeFirst.includes(path);
+  const [active, setActive] = useState<boolean>(false);
 
   return (
     <li>
@@ -30,9 +26,7 @@ export function FirstLevelMenu({
         category={category}
         icon={icon}
         active={active}
-        onClick={() =>
-          setActiveCategory({ path, categoryLevel: "activeFirst" })
-        }
+        onClick={() => setActive((prevState) => !prevState)}
         aria-expanded={active}
         aria-controls="second-level-menu"
       />
@@ -67,6 +61,7 @@ export function FirstLevelMenu({
                   key={item._id.secondCategory}
                   category={item._id.secondCategory}
                   thirdLevelMenu={item.pages}
+                  path={path}
                 />
               ))
             ) : (

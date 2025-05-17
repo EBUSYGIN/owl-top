@@ -1,5 +1,4 @@
 import { IconType } from "@/src/shared/ui";
-import { topMenu } from "../model/topMenu";
 
 export interface TopMenuItem {
   id: number;
@@ -22,21 +21,4 @@ export interface Page {
   title: string;
   _id: string;
   category: string;
-}
-
-type Keys = keyof IMenuContext;
-
-export interface IMenuContext {
-  activeFirst: string[];
-  activeSecond: string[];
-  activeThird: string[];
-}
-
-export interface CategorySetterParams {
-  path: string;
-  categoryLevel: Keys;
-}
-
-export interface IMenuSetterContextType {
-  setActiveCategory: (params: CategorySetterParams) => void;
 }

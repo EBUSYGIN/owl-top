@@ -4,19 +4,17 @@ import { SecondLevelMenuProps } from "./SecondLevelMenu.props";
 
 import styles from "./SecondLevelMenu.module.css";
 import { ThirdLevelMenu } from "../ThirdLevelMenu/ThirdLevelMenu";
-import { MenuContext, MenuSetterContext } from "../MenuContext/MenuContext";
-import { useContext } from "react";
+
+import { useState } from "react";
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function SecondLevelMenu({
   category,
   thirdLevelMenu,
+  path,
 }: SecondLevelMenuProps) {
-  const { setActiveCategory } = useContext(MenuSetterContext);
-  const { activeSecond } = useContext(MenuContext);
-
-  const active = activeSecond.includes(category);
+  const [active, setActive] = useState<boolean>(false);
 
   return (
     <li>
@@ -24,9 +22,7 @@ export function SecondLevelMenu({
         appearance="secondLevel"
         category={category}
         active={active}
-        onClick={() =>
-          setActiveCategory({ path: category, categoryLevel: "activeSecond" })
-        }
+        onClick={() => setActive((prevState) => !prevState)}
       />
 
       <AnimatePresence>
@@ -60,6 +56,7 @@ export function SecondLevelMenu({
                   key={thirdLevel._id}
                   category={thirdLevel.title}
                   alias={thirdLevel.alias}
+                  path={path}
                 />
               ))
             ) : (

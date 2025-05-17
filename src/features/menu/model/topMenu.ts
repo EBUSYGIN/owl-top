@@ -1,4 +1,4 @@
-import { IMenuContext, TopMenuItem } from "../types";
+import { TopMenuItem } from "../types";
 
 export const topMenu: TopMenuItem[] = [
   {
@@ -26,9 +26,3 @@ export const topMenu: TopMenuItem[] = [
     path: "/products",
   },
 ];
-
-export const MenuContextModel: IMenuContext = {
-  activeFirst: [],
-  activeSecond: [],
-  activeThird: [],
-};
