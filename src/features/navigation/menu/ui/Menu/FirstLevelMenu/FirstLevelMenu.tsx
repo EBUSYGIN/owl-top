@@ -10,6 +10,7 @@ import { SecondLevelMenu } from "../SecondLevelMenu/SecondLevelMenu";
 import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useParams } from "next/navigation";
 
 export function FirstLevelMenu({
   secondLevelMenu,
@@ -18,6 +19,7 @@ export function FirstLevelMenu({
   path,
 }: FirstLevelMenuProps) {
   const [active, setActive] = useState<boolean>(false);
+  const params = useParams();
 
   return (
     <li>
@@ -62,6 +64,7 @@ export function FirstLevelMenu({
                   category={item._id.secondCategory}
                   thirdLevelMenu={item.pages}
                   path={path}
+                  params={params}
                 />
               ))
             ) : (
