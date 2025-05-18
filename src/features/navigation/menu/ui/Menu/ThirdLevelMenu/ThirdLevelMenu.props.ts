@@ -1,3 +1,4 @@
+import { Params } from "next/dist/server/request/params";
 import { DetailedHTMLProps, LiHTMLAttributes } from "react";
 
 export interface ThirdLevelMenuProps
@@ -5,4 +6,5 @@ export interface ThirdLevelMenuProps
   category: string;
   alias: string;
   path: string;
+  params: Params;
 }

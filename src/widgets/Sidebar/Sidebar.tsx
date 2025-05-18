@@ -1,10 +1,11 @@
-import { Search } from "@/src/features/courses/ui";
 import { Icon, Title } from "@/src/shared/ui";
-import { Menu } from "@/src/features/menu/ui";
+import { Menu } from "@/src/features/navigation/menu/ui";
+
+import { menuHandler } from "@/src/features/navigation/menu/handler";
+import { topMenu } from "@/src/features/navigation/menu/model/topMenu";
 
 import styles from "./Sidebar.module.css";
-import { menuHandler } from "@/src/features/menu/handler";
-import { topMenu } from "@/src/features/menu/model/topMenu";
+import { SidebarSearch } from "@/src/features/search/Search/ui";
 
 export async function Sidebar() {
   const data = await Promise.all(
@@ -22,7 +23,7 @@ export async function Sidebar() {
           top
         </Title>
       </div>
-      <Search />
+      <SidebarSearch />
       <Menu data={data} />
     </div>
   );

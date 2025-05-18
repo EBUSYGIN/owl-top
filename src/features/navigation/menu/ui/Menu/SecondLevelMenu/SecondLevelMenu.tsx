@@ -13,6 +13,7 @@ export function SecondLevelMenu({
   category,
   thirdLevelMenu,
   path,
+  params,
 }: SecondLevelMenuProps) {
   const [active, setActive] = useState<boolean>(false);
 
@@ -57,6 +58,7 @@ export function SecondLevelMenu({
                   category={thirdLevel.title}
                   alias={thirdLevel.alias}
                   path={path}
+                  params={params}
                 />
               ))
             ) : (
