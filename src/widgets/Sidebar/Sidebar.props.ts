@@ -1,5 +1,4 @@
-import { SecondMenuItem } from "@/src/features/navigation/menu/types";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface SidebarProps {
-  secondLevelMenuItems: Array<SecondMenuItem[] | undefined>;
-}
+export interface SidebarProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

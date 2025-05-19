@@ -6,7 +6,19 @@
 
 .content {
   height: 100%;
+  padding: 22px;
   display: flex;
-  padding: 35px 22px;
+  gap: 33px;
+
   flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .layout .mobile {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;
+  }
 }
