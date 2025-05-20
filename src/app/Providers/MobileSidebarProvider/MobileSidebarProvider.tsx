@@ -10,7 +10,6 @@ import styles from "./MobileSidebarProvider.module.css";
 
 export function MobileSidebarProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const pathname = usePathname();
 
   useEffect(() => {
