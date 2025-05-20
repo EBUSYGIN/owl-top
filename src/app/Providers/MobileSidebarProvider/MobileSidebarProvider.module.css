@@ -14,6 +14,12 @@
   background-color: var(--background-gray);
 }
 
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mobileButton {
   position: fixed;
   z-index: 4;
@@ -25,6 +31,6 @@
   .mobileSidebar {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 40px;
+    grid-template-columns: 1fr;
   }
 }

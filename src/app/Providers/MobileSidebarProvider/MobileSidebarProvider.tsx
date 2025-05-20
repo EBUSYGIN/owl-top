@@ -4,9 +4,10 @@ import cn from "classnames";
 
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
-import { Button, Icon } from "@/src/shared/ui";
+import { Button } from "@/src/shared/ui";
 
 import styles from "./MobileSidebarProvider.module.css";
+import { Logo } from "@/src/features/navigation/logo/ui";
 
 export function MobileSidebarProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -30,13 +31,16 @@ export function MobileSidebarProvider({ children }: { children: ReactNode }) {
 
   return (
     <header className={cn(styles.mobileSidebar)}>
-      <Icon.Logo />
-      <Button
-        appearance="ghost"
-        icon="Burger"
-        size="s"
-        onClick={() => setIsOpen(true)}
-      />
+      <div className={styles.mobileHeader}>
+        <Logo />
+        <Button
+          appearance="ghost"
+          icon="Burger"
+          size="s"
+          onClick={() => setIsOpen(true)}
+        />
+      </div>
+
       <motion.div
         className={styles.mobileMenu}
         variants={variants}
