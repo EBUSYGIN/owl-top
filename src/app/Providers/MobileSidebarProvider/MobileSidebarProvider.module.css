@@ -1,0 +1,30 @@
+.mobileSidebar {
+  display: none;
+}
+
+.mobileMenu {
+  padding: 22px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-color: var(--background-gray);
+}
+
+.mobileButton {
+  position: fixed;
+  z-index: 4;
+  top: 22px;
+  right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .mobileSidebar {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 40px;
+  }
+}

@@ -14,6 +14,7 @@
 .ghost {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
+  color: var(--primary);
 }
 
 .m {

@@ -5,7 +5,7 @@
 
 .input {
   padding: 7px 15px;
-  max-width: 230px;
+
   border: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
   background-color: var(--white);

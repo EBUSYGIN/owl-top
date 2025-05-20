@@ -1,8 +1,13 @@
 import { topMenu } from "../../model/topMenu";
 import { MenuProps } from "./Menu.props";
 import { FirstLevelMenu } from "./FirstLevelMenu/FirstLevelMenu";
+import { menuHandler } from "../../handler";
 
-export function Menu({ data }: MenuProps) {
+export async function Menu() {
+  const data = await Promise.all(
+    topMenu.map((topMenuItem) => menuHandler.getMenu(topMenuItem.id))
+  );
+
   return (
     <ul>
       {topMenu.map((topMenuItem, index) => (
