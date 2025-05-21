@@ -6,11 +6,15 @@
 
 .content {
   height: 100%;
-  padding: 22px;
+  padding: 35px;
   display: flex;
   gap: 33px;
 
   flex: 1;
+}
+
+.main {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

@@ -23,7 +23,7 @@ export default async function Layout({
         ) : (
           <Sidebar className={styles.mobile} />
         )}
-        <main>{children}</main>
+        <main className={styles.main}>{children}</main>
       </div>
       <Footer />
     </div>

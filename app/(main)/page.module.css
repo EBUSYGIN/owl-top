@@ -1,0 +1,50 @@
+.header {
+  margin-bottom: 60px;
+}
+
+.middle {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: center;
+}
+
+.middleText {
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  color: var(--gray);
+
+  text-wrap: pretty;
+}
+
+.homeImage,
+.homeImageMobile {
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.homeImageMobile {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  gap: 30px;
+}
+
+@media screen and (max-width: 1250px) {
+  .homeImage {
+    display: none;
+  }
+
+  .homeImageMobile {
+    display: block;
+  }
+}
