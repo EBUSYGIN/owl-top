@@ -8,12 +8,10 @@ export function Logo() {
   return (
     <Link className={styles.logoBox} href={"/"}>
       <Icon.Logo />
-      <Title tag="h1" appearance="bold">
+      <Title tag="h1" className={styles.bold}>
         OWL
       </Title>
-      <Title tag="h1" appearance="thin">
-        top
-      </Title>
+      <Title tag="h1">top</Title>
     </Link>
   );
 }
