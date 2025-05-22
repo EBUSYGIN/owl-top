@@ -9,10 +9,10 @@ import { SidebarProps } from "./Sidebar.props";
 
 export async function Sidebar({ className }: SidebarProps) {
   return (
-    <div className={cn(styles.sidebar, className)}>
+    <aside className={cn(styles.sidebar, className)}>
       <Logo />
       <SidebarSearch />
       <Menu />
-    </div>
+    </aside>
   );
 }
