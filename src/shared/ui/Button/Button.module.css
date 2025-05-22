@@ -1,24 +1,39 @@
 .button {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 22px;
   line-height: 100%;
   display: flex;
+  justify-content: center;
   gap: 11px;
   border-radius: 5px;
 }
 
 .primary {
   background-color: var(--primary);
+  color: var(--white);
+
+  transition: background-color 0.3s;
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
 }
 
 .ghost {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
   color: var(--primary);
+
+  transition: background-color 0.3s;
+}
+
+.ghost:hover {
+  background-color: var(--light-gray-hover);
 }
 
 .m {
   padding: 11px 37px;
+  font-size: 18px;
 }
 
 .s {
