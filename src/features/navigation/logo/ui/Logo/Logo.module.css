@@ -4,3 +4,7 @@
   align-items: baseline;
   gap: 7px;
 }
+
+.bold {
+  font-weight: 700;
+}

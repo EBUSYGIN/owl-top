@@ -7,7 +7,7 @@ export interface ButtonProps
     HTMLButtonElement
   > {
   size?: "s" | "m" | "l";
-  appearance?: "primary" | "ghost";
+  appearance?: "primary" | "ghost" | "filter";
   icon?: IconType;
   typeOf?: "link" | "button" | "a";
   href?: string;

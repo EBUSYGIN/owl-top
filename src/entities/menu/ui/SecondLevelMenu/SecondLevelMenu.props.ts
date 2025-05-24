@@ -1,5 +1,5 @@
 import { Params } from "next/dist/server/request/params";
-import { Page } from "../../../types";
+import { Page } from "../../types";
 
 export interface SecondLevelMenuProps {
   category: string;

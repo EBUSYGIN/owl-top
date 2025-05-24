@@ -3,7 +3,6 @@ import { Footer, Sidebar } from "@/src/widgets";
 import { MobileSidebarProvider } from "@/src/app/Providers/MobileSidebarProvider/MobileSidebarProvider";
 
 import styles from "./layout.module.css";
-import { isMobile } from "@/src/shared/lib/isMobile";
 
 export default async function Layout({
   children,

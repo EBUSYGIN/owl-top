@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, LiHTMLAttributes } from "react";
-import { MenuItem } from "../../../types";
+import { MenuItem } from "../../types";
 import { IconType } from "@/src/shared/ui";
 
 export interface FirstLevelMenuProps

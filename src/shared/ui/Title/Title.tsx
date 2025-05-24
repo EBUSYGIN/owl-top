@@ -5,14 +5,14 @@ import { TitleProps } from "./Title.props";
 import styles from "./Title.module.css";
 
 export function Title({
-  appearance = "normal",
+  color = "primary",
   tag,
   size = "m",
   className,
   children,
 }: TitleProps) {
   return React.createElement(tag, {
-    className: cn(styles.title, styles[appearance], styles[size], className),
+    className: cn(styles.title, styles[size], styles[color], className),
     children,
   });
 }

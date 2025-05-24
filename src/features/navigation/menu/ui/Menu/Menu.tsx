@@ -1,7 +1,6 @@
-import { topMenu } from "../../model/topMenu";
-import { MenuProps } from "./Menu.props";
-import { FirstLevelMenu } from "./FirstLevelMenu/FirstLevelMenu";
-import { menuHandler } from "../../handler";
+import { menuHandler } from "@/src/entities/menu/handler";
+import { topMenu } from "@/src/entities/menu/model/topMenu";
+import { FirstLevelMenu } from "@/src/entities/menu/ui";
 
 export async function Menu() {
   const data = await Promise.all(

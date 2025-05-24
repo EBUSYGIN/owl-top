@@ -1,13 +1,18 @@
 :root {
   --primary: #7653fc;
   --primary-hover: #653ffe;
+  --primary-card: #dcd7f6;
   --white: #fff;
   --black: #3b434e;
   --light-gray: #ebebeb;
   --gray: #787d85;
+  --deep-gray: #b3c0d9;
   --border-gray: #dfdfdf;
   --background-gray: #f5f6f8;
   --light-gray-hover: #ebebebed;
+  --light-green: #c8f8e4;
+  --green: #1dc37e;
+  --red: #de0000;
 }
 
 html {

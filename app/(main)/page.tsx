@@ -14,7 +14,7 @@ export default function Page() {
       </header>
       <section className={styles.middle}>
         <div className={styles.middleText}>
-          <Title tag="h2" appearance="bold" size="l">
+          <Title tag="h2" size="l">
             Тысячи курсов — один идеальный для вас!
           </Title>
           <p>
@@ -25,8 +25,8 @@ export default function Page() {
         </div>
         <Image
           src={"/home-image.jpg"}
-          width={550}
-          height={498}
+          width={450}
+          height={398}
           alt="Изображение ноутбука на главной страницу приложения"
           className={styles.homeImage}
           priority
