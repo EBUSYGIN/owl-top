@@ -1,0 +1,27 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topLeft {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.image {
+  border-radius: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

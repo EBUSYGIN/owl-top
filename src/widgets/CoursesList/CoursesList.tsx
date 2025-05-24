@@ -6,14 +6,13 @@ import styles from "./CoursesList.module.css";
 import { CoursesListProps } from "./CoursesList.props";
 import { useReducer } from "react";
 import { sortReducer } from "@/src/shared/lib/sortReducer";
+import { CourseCard } from "@/src/entities/course/ui";
 
 export function CoursesList({ title, courses }: CoursesListProps) {
   const [{ sortedCourses, sort }, dispatchSort] = useReducer(sortReducer, {
     sort: "RATING",
     sortedCourses: courses,
   });
-
-  console.log(sortedCourses);
 
   return (
     <>
@@ -47,7 +46,7 @@ export function CoursesList({ title, courses }: CoursesListProps) {
       </header>
       <ul>
         {sortedCourses.map((course) => (
-          <li>{course.price}</li>
+          <CourseCard key={course._id} {...course} />
         ))}
       </ul>
     </>
