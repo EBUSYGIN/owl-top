@@ -4,6 +4,7 @@
   line-height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 11px;
   border-radius: 5px;
 }
@@ -29,6 +30,13 @@
 
 .ghost:hover {
   background-color: var(--light-gray-hover);
+}
+
+.filter {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black);
+  background-color: none;
 }
 
 .m {

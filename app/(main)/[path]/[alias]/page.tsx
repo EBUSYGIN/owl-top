@@ -4,6 +4,9 @@ import { Metadata } from "next";
 
 import styles from "./page.module.css";
 import { redirect } from "next/navigation";
+import { courseHandler } from "@/src/entities/course/handler";
+import { CoursesList } from "@/src/widgets";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Курсы",
@@ -16,19 +19,13 @@ export default async function Courses({
 }) {
   const { alias } = await params;
   const pageInfo = await pageHandler.getPageInfo(alias);
+  const courses = await courseHandler.getAllByCategory(10, pageInfo?.category);
 
   if (!pageInfo) redirect("/");
 
   return (
     <div>
-      <div className={styles.header}>
-        <Title tag="h1" size="xl" color="black">
-          {pageInfo?.title}
-        </Title>
-        <Tag color="gray" size="l" className={styles.tag}>
-          10
-        </Tag>
-      </div>
+      <CoursesList title={pageInfo.title} courses={courses || []} />
     </div>
   );
 }
