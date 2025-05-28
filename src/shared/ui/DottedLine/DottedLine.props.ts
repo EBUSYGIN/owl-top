@@ -1,9 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface PriceInfoProps
+export interface DottedLineProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  price: number;
-  oldPrice?: number;
-  blockName: string;
-  additionalPriceInfo?: string;
+  name: string;
+  value: string;
 }

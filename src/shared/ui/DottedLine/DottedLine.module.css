@@ -1,0 +1,28 @@
+.line {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 200%;
+  color: var(--black);
+}
+
+.dots {
+  flex: 1 1 auto;
+
+  border-bottom: 1px dashed var(--dashed-gray);
+}
+
+.value {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: right;
+  color: var(--black);
+}

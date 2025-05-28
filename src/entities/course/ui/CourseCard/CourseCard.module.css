@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 18px;
 }
 
 .topLeft {
@@ -24,4 +25,46 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.middle {
+  padding: 22px 0;
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black);
+  margin-bottom: 18px;
+}
+
+.characteristics {
+  display: flex;
+  gap: 60px;
+}
+
+.characteristics > div {
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+@media screen and (max-width: 1120px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }

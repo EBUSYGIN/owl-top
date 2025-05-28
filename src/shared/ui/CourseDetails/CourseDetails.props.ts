@@ -1,9 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface PriceInfoProps
+export interface CourseDetailsProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  price: number;
-  oldPrice?: number;
-  blockName: string;
-  additionalPriceInfo?: string;
+  adv?: string;
+  disadv?: string;
 }

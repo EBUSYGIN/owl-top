@@ -46,7 +46,7 @@ export function CoursesList({ title, courses }: CoursesListProps) {
       </header>
       <ul>
         {sortedCourses.map((course) => (
-          <CourseCard key={course._id} {...course} />
+          <CourseCard key={course._id} course={course} />
         ))}
       </ul>
     </>

@@ -15,4 +15,6 @@
   font-weight: 300;
   font-size: 14px;
   color: var(--black);
+
+  grid-column: 1 / -1;
 }
