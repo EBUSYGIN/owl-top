@@ -1,0 +1,25 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adv,
+.disadv {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black);
+
+  padding-left: 15px;
+}
+
+.adv {
+  border-left: 3px solid var(--green);
+}
+
+.disadv {
+  border-left: 3px solid var(--red);
+}

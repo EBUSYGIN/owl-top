@@ -4,3 +4,6 @@ export * from "./Input/Input";
 export * from "./Title/Title";
 export * from "./Tag/Tag";
 export * from "./Card/Card";
+export * from "./PriceInfo/PriceInfo";
+export * from "./DottedLine/DottedLine";
+export * from "./CourseDetails/CourseDetails";

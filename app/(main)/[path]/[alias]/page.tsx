@@ -6,11 +6,23 @@ import styles from "./page.module.css";
 import { redirect } from "next/navigation";
 import { courseHandler } from "@/src/entities/course/handler";
 import { CoursesList } from "@/src/widgets";
-import { Suspense } from "react";
 
-export const metadata: Metadata = {
-  title: "Курсы",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ path: string; alias: string }>;
+}) {
+  const { alias } = await params;
+  const pageInfo = await pageHandler.getPageInfo(alias);
+
+  return {
+    title: pageInfo?.title,
+  };
+}
+
+// export const metadata: Metadata = {
+//   title: "Курсы по ",
+// };
 
 export default async function Courses({
   params,

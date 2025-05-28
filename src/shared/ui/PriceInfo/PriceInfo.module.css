@@ -1,0 +1,20 @@
+.price {
+  display: grid;
+  grid-template-columns: 1fr 67px;
+  align-items: center;
+  gap: 5px;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--black);
+}
+
+.additional {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--black);
+
+  grid-column: 1 / -1;
+}
