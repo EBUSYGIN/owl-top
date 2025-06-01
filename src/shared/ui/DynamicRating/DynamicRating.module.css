@@ -1,0 +1,19 @@
+.dynamicRating {
+  display: flex;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.starBox {
+  padding-right: 5px;
+  color: var(--rating-star-color);
+}
+
+.active {
+  color: var(--primary);
+}

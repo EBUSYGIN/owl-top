@@ -1,0 +1,23 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.starBox {
+  padding-right: 5px;
+}
+
+.star {
+  color: var(--rating-star-color);
+}
+
+.active {
+  color: var(--primary);
+}
+
+.reviewCount {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--black);
+}

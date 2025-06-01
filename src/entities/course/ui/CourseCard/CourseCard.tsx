@@ -5,12 +5,15 @@ import {
   CourseDetails,
   DottedLine,
   PriceInfo,
+  StaticRating,
   Tag,
   Title,
 } from "@/src/shared/ui";
 
-import styles from "./CourseCard.module.css";
 import { CourseCardProps } from "./CourseCard.props";
+
+import styles from "./CourseCard.module.css";
+import { DynamicRating } from "@/src/shared/ui/DynamicRating/DynamicRating";
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
@@ -48,6 +51,10 @@ export function CourseCard({ course }: CourseCardProps) {
             price={course.credit}
             blockName="Кредит"
             additionalPriceInfo="/мес"
+          />
+          <StaticRating
+            initialRating={course.initialRating}
+            reviewCount={course.reviewCount}
           />
         </div>
       </div>

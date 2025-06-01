@@ -7,3 +7,4 @@ export * from "./Card/Card";
 export * from "./PriceInfo/PriceInfo";
 export * from "./DottedLine/DottedLine";
 export * from "./CourseDetails/CourseDetails";
+export * from "./StaticRating/StaticRating";
