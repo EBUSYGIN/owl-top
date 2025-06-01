@@ -68,3 +68,17 @@
     gap: 20px;
   }
 }
+
+.actions {
+  padding-top: 22px;
+  display: flex;
+  gap: 20px;
+}
+
+.arrow {
+  transition: transform 0.2s;
+}
+
+.arrowActive {
+  transform: rotate(90deg);
+}

@@ -23,7 +23,7 @@
 .ghost {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
-  color: var(--primary);
+  color: var(--black);
 
   transition: background-color 0.3s;
 }
@@ -40,8 +40,8 @@
 }
 
 .m {
-  padding: 11px 37px;
-  font-size: 18px;
+  padding: 11px;
+  font-size: 14px;
 }
 
 .s {

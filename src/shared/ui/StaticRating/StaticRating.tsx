@@ -24,9 +24,12 @@ export function StaticRating({
         ))}
       </div>
 
-      <div className={styles.reviewCount}>
-        {reviewCount} {plural(reviewCount, ["отзыв", "отзыва", "отзывов"])}
-      </div>
+      {
+        <div className={styles.reviewCount}>
+          {reviewCount > 0 ? reviewCount : "Нет"}{" "}
+          {plural(reviewCount, ["отзыв", "отзыва", "отзывов"])}
+        </div>
+      }
     </div>
   );
 }

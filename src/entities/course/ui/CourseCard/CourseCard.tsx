@@ -1,9 +1,15 @@
+"use client";
+import cn from "classnames";
+
+import { useState } from "react";
 import Image from "next/image";
 
 import {
+  Button,
   Card,
   CourseDetails,
   DottedLine,
+  Icon,
   PriceInfo,
   StaticRating,
   Tag,
@@ -13,9 +19,10 @@ import {
 import { CourseCardProps } from "./CourseCard.props";
 
 import styles from "./CourseCard.module.css";
-import { DynamicRating } from "@/src/shared/ui/DynamicRating/DynamicRating";
 
 export function CourseCard({ course }: CourseCardProps) {
+  const [isReviewOpen, setIsReviewOpen] = useState<boolean>(false);
+
   return (
     <Card>
       <div className={styles.top}>
@@ -78,6 +85,19 @@ export function CourseCard({ course }: CourseCardProps) {
             disadv={course.disAdvantages}
           />
         </div>
+      </div>
+      <div className={styles.actions}>
+        <Button size="m">Узнать подробнее</Button>
+        <Button
+          size="m"
+          appearance="ghost"
+          onClick={() => setIsReviewOpen((prevState) => !prevState)}
+        >
+          Читать отзывы
+          <Icon.Arrow
+            className={cn(styles.arrow, { [styles.arrowActive]: isReviewOpen })}
+          />
+        </Button>
       </div>
     </Card>
   );

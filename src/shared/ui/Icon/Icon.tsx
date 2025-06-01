@@ -8,6 +8,8 @@ import Search from "../../assets/images/icons/search.svg";
 import Close from "../../assets/images/icons/close.svg";
 import Sort from "../../assets/images/icons/sort.svg";
 import Star from "../../assets/images/icons/star.svg";
+import User from "../../assets/images/icons/user.svg";
+import Arrow from "../../assets/images/icons/arrow.svg";
 
 export const Icon = {
   Burger,
@@ -20,6 +22,8 @@ export const Icon = {
   Close,
   Sort,
   Star,
+  User,
+  Arrow,
 };
 
 export type IconType = keyof typeof Icon;

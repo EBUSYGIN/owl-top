@@ -1,10 +1,11 @@
 "use client";
+import Link from "next/link";
 import cn from "classnames";
+
 import { Icon } from "../Icon/Icon";
 import { ButtonProps } from "./Button.props";
 
 import styles from "./Button.module.css";
-import Link from "next/link";
 
 export function Button({
   children,
