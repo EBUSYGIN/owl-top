@@ -1,23 +1,15 @@
 import cn from "classnames";
-import { useState } from "react";
 
 import { Icon } from "@/src/shared/ui";
-
-import { RatingProps } from "./Rating.props";
-import styles from "./Rating.module.css";
 import { plural } from "@/src/shared/lib/plural";
 
-export function Rating({
-  isEditable = false,
-  initialRating = 0,
-  reviewCount = 0,
-}: RatingProps) {
-  const [rating, setRating] = useState<number>(0);
+import { StaticRatingProps } from "./StaticRating.props";
+import styles from "./StaticRating.module.css";
 
-  if (isEditable) {
-    return <div className={styles.rating}></div>;
-  }
-
+export function StaticRating({
+  initialRating,
+  reviewCount,
+}: StaticRatingProps) {
   return (
     <div className={styles.rating}>
       <div>

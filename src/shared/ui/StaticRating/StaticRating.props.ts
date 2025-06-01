@@ -1,8 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface RatingProps
+export interface StaticRatingProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  isEditable?: boolean;
-  initialRating?: number;
-  reviewCount?: number;
+  initialRating: number;
+  reviewCount: number;
 }
