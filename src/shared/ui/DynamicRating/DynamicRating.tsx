@@ -6,8 +6,9 @@ import { useState } from "react";
 import { Icon } from "../Icon/Icon";
 
 import styles from "./DynamicRating.module.css";
+import { DynamicRatingProps } from "./DynamicRating.props";
 
-export function DynamicRating() {
+export function DynamicRating({}: DynamicRatingProps) {
   const [userReviewRating, setUserReviewRating] = useState<number>(0);
   const [userHoverRating, setUserHoverRating] = useState<number>(0);
 

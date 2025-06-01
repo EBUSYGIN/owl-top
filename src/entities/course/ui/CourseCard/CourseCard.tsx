@@ -56,7 +56,6 @@ export function CourseCard({ course }: CourseCardProps) {
             initialRating={course.initialRating}
             reviewCount={course.reviewCount}
           />
-          <DynamicRating />
         </div>
       </div>
       <div className={styles.middle}>
