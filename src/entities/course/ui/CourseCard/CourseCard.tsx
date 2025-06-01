@@ -13,6 +13,7 @@ import {
 import { CourseCardProps } from "./CourseCard.props";
 
 import styles from "./CourseCard.module.css";
+import { DynamicRating } from "@/src/shared/ui/DynamicRating/DynamicRating";
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
@@ -55,6 +56,7 @@ export function CourseCard({ course }: CourseCardProps) {
             initialRating={course.initialRating}
             reviewCount={course.reviewCount}
           />
+          <DynamicRating />
         </div>
       </div>
       <div className={styles.middle}>
