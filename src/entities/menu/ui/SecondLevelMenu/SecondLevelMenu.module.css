@@ -1,3 +1,7 @@
+.secondLevel:hover {
+  color: var(--primary);
+}
+
 .thirdLevelList {
   display: none;
 }

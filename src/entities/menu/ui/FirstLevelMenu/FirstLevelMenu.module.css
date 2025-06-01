@@ -2,6 +2,10 @@
   color: var(--gray);
 }
 
+.firstLevel:hover {
+  color: var(--primary);
+}
+
 .secondLevelList {
   padding-left: 30px;
   margin-left: 12px;

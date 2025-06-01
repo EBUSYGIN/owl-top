@@ -24,6 +24,7 @@ export function FirstLevelMenu({
   return (
     <li>
       <MenuTitle
+        className={styles.firstLevel}
         appearance="topLevel"
         category={category}
         icon={icon}

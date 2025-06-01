@@ -22,6 +22,7 @@ export function SecondLevelMenu({
   return (
     <li>
       <MenuTitle
+        className={styles.secondLevel}
         appearance="secondLevel"
         category={category}
         active={active}

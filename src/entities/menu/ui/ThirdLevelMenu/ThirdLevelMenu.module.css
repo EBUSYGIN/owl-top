@@ -5,6 +5,10 @@
   color: var(--gray);
 }
 
+.thirdLevel:hover {
+  color: var(--primary);
+}
+
 .active {
   color: var(--primary);
 }
