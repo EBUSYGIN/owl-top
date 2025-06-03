@@ -17,34 +17,36 @@ export function CoursesList({ title, courses }: CoursesListProps) {
   return (
     <>
       <header className={styles.header}>
-        <Title tag="h1" size="xl" color="black">
-          {title}
-        </Title>
-        <Tag color="gray" size="l" className={styles.tag}>
-          {courses.length}
-        </Tag>
-        <Button
-          appearance="filter"
-          icon={sort === "RATING" ? "Sort" : undefined}
-          className={styles.sortByRating}
-          onClick={() => {
-            dispatchSort("RATING");
-          }}
-        >
-          По рейтингу
-        </Button>
-        <Button
-          appearance="filter"
-          icon={sort === "PRICE" ? "Sort" : undefined}
-          className={styles.sortByPrice}
-          onClick={() => {
-            dispatchSort("PRICE");
-          }}
-        >
-          По цене
-        </Button>
+        <div className={styles.titleTag}>
+          <Title tag="h1" size="xl" color="black">
+            {title}
+          </Title>
+          <Tag color="gray" size="l" className={styles.tag}>
+            {courses.length}
+          </Tag>
+        </div>
+        <div className={styles.filtration}>
+          <Button
+            appearance="filter"
+            icon={sort === "RATING" ? "Sort" : undefined}
+            onClick={() => {
+              dispatchSort("RATING");
+            }}
+          >
+            По рейтингу
+          </Button>
+          <Button
+            appearance="filter"
+            icon={sort === "PRICE" ? "Sort" : undefined}
+            onClick={() => {
+              dispatchSort("PRICE");
+            }}
+          >
+            По цене
+          </Button>
+        </div>
       </header>
-      <ul>
+      <ul className={styles.courseList}>
         {sortedCourses.map((course) => (
           <CourseCard key={course._id} course={course} />
         ))}

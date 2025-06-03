@@ -10,9 +10,11 @@ export function StaticRating({
   initialRating,
   reviewCount,
 }: StaticRatingProps) {
+  console.log(reviewCount);
+
   return (
     <div className={styles.rating}>
-      <div>
+      <div className={styles.stars}>
         {new Array(5).fill(null).map((_, i) => (
           <span key={i} className={styles.starBox}>
             <Icon.Star
@@ -24,12 +26,17 @@ export function StaticRating({
         ))}
       </div>
 
-      {
+      {reviewCount === undefined ? null : (
         <div className={styles.reviewCount}>
-          {reviewCount > 0 ? reviewCount : "Нет"}{" "}
-          {plural(reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          {reviewCount > 0
+            ? `${reviewCount} ${plural(reviewCount, [
+                "отзыв",
+                "отзыва",
+                "отзывов",
+              ])}`
+            : "Нет отзывов"}
         </div>
-      }
+      )}
     </div>
   );
 }

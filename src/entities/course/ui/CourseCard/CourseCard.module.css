@@ -1,14 +1,15 @@
 .top {
   display: flex;
+  gap: 40px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 18px;
 }
 
 .topLeft {
   display: flex;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .image {
@@ -23,14 +24,15 @@
 
 .categories {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 5px;
 }
 
 .topRight {
   display: flex;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .middle {
@@ -58,6 +60,7 @@
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
