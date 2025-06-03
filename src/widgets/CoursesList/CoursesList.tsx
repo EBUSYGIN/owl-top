@@ -1,5 +1,7 @@
 "use client";
 
+import cn from "classnames";
+
 import { Button, Tag, Title } from "@/src/shared/ui";
 
 import styles from "./CoursesList.module.css";
@@ -28,6 +30,7 @@ export function CoursesList({ title, courses }: CoursesListProps) {
         <div className={styles.filtration}>
           <Button
             appearance="filter"
+            className={cn({ [styles.active]: sort === "RATING" })}
             icon={sort === "RATING" ? "Sort" : undefined}
             onClick={() => {
               dispatchSort("RATING");
@@ -37,6 +40,7 @@ export function CoursesList({ title, courses }: CoursesListProps) {
           </Button>
           <Button
             appearance="filter"
+            className={cn({ [styles.active]: sort === "PRICE" })}
             icon={sort === "PRICE" ? "Sort" : undefined}
             onClick={() => {
               dispatchSort("PRICE");
@@ -48,7 +52,12 @@ export function CoursesList({ title, courses }: CoursesListProps) {
       </header>
       <ul className={styles.courseList}>
         {sortedCourses.map((course) => (
-          <CourseCard key={course._id} course={course} />
+          <CourseCard
+            key={course._id}
+            course={course}
+            layout={true}
+            layoutRoot
+          />
         ))}
       </ul>
     </>

@@ -10,8 +10,6 @@ export function StaticRating({
   initialRating,
   reviewCount,
 }: StaticRatingProps) {
-  console.log(reviewCount);
-
   return (
     <div className={styles.rating}>
       <div className={styles.stars}>

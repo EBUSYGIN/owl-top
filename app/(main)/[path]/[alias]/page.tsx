@@ -20,10 +20,6 @@ export async function generateMetadata({
   };
 }
 
-// export const metadata: Metadata = {
-//   title: "Курсы по ",
-// };
-
 export default async function Courses({
   params,
 }: {

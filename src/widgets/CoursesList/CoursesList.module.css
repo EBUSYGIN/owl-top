@@ -24,12 +24,16 @@
 
 .filtration {
   display: flex;
-  gap: 43px;
   align-items: center;
+  gap: 43px;
   margin-left: auto;
 }
 
-@media screen and (max-width: 840px) {
+.active {
+  color: var(--primary);
+}
+
+@media screen and (width <= 840px) {
   .filtration {
     margin-left: 0;
     width: 100%;

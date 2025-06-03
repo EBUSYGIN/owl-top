@@ -19,12 +19,16 @@ import {
 import { CourseCardProps } from "./CourseCard.props";
 
 import styles from "./CourseCard.module.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { ReviewList } from "@/src/entities/review/ui/ReviewList/ReviewList";
 
-export function CourseCard({ course }: CourseCardProps) {
+export const CourseCard = motion.create(function CourseCard({
+  course,
+}: CourseCardProps) {
   const [isReviewOpen, setIsReviewOpen] = useState<boolean>(false);
 
   return (
-    <>
+    <motion.div layout>
       <Card>
         <div className={styles.top}>
           <div className={styles.topLeft}>
@@ -103,6 +107,32 @@ export function CourseCard({ course }: CourseCardProps) {
           </Button>
         </div>
       </Card>
-    </>
+      <AnimatePresence>
+        {isReviewOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+              transition: {
+                height: { duration: 0.3, ease: "easeOut" },
+                opacity: { duration: 0.2, ease: "linear" },
+              },
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+              transition: {
+                height: { duration: 0.25, ease: "easeIn" },
+                opacity: { duration: 0.15, ease: "linear" },
+              },
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <ReviewList reviews={course.reviews} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
-}
+});

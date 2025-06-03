@@ -6,5 +6,5 @@ export interface ReviewProps
   title: string;
   createdAt: string;
   rating: number;
-  text: string;
+  description: string;
 }
