@@ -1,6 +1,6 @@
 .price {
-  display: grid;
-  grid-template-columns: 1fr 67px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 5px;
 }
@@ -15,6 +15,6 @@
   font-weight: 300;
   font-size: 14px;
   color: var(--black);
-
-  grid-column: 1 / -1;
+  width: 100%;
+  align-self: flex-end;
 }

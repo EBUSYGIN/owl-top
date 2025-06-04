@@ -1,13 +1,14 @@
 .top {
   display: flex;
+  gap: 40px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 18px;
 }
 
 .topLeft {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -23,14 +24,17 @@
 
 .categories {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 5px;
 }
 
 .topRight {
   display: flex;
-  align-items: center;
-  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-evenly;
+  gap: 20px;
 }
 
 .middle {
@@ -40,16 +44,16 @@
 }
 
 .description {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
   color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
   margin-bottom: 18px;
 }
 
 .characteristics {
   display: flex;
-  gap: 60px;
+  gap: 30px;
 }
 
 .characteristics > div {
@@ -58,13 +62,34 @@
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-@media screen and (max-width: 1120px) {
+.actions {
+  padding-top: 22px;
+  display: flex;
+  gap: 20px;
+}
+
+.arrow {
+  transition: transform 0.2s;
+}
+
+.arrowActive {
+  transform: rotate(90deg);
+}
+
+@media screen and (width <= 1120px) {
   .top {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+}
+
+@media screen and (width <= 1010px) {
+  .characteristics {
+    flex-direction: column;
   }
 }

@@ -47,3 +47,18 @@ export interface Review {
   __v: number;
   site?: string;
 }
+
+export interface CourseReviewForm {
+  name: string;
+  title: string;
+  description: string;
+  rating: number;
+}
+
+export interface CourseReview extends CourseReviewForm {
+  productId: string;
+}
+
+export interface CourseReviewResponse {
+  message: string;
+}

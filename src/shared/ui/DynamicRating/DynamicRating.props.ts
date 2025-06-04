@@ -1,4 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface DynamicRatingProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+export interface DynamicRatingProps {
+  error?: string;
+  rating: number;
+  className: string;
+  onChange: (value: number) => void;
+}

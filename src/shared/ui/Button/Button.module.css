@@ -1,10 +1,10 @@
 .button {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 100%;
   gap: 11px;
   border-radius: 5px;
 }
@@ -12,7 +12,6 @@
 .primary {
   background-color: var(--primary);
   color: var(--white);
-
   transition: background-color 0.3s;
 }
 
@@ -23,8 +22,7 @@
 .ghost {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
-  color: var(--primary);
-
+  color: var(--black);
   transition: background-color 0.3s;
 }
 
@@ -32,18 +30,23 @@
   background-color: var(--light-gray-hover);
 }
 
-.filter {
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--black);
-  background-color: none;
+.l {
+  padding: 11px 37px;
+  font-size: 14px;
 }
 
 .m {
-  padding: 11px 37px;
-  font-size: 18px;
+  padding: 11px;
+  font-size: 14px;
 }
 
 .s {
   padding: 8px;
+}
+
+.filter {
+  padding: 0;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
 }

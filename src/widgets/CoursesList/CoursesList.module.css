@@ -1,14 +1,41 @@
 .header {
   display: flex;
-  gap: 19px;
+  flex-wrap: wrap;
+  gap: 22px;
   align-items: center;
   margin-bottom: 22px;
+}
+
+.titleTag {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.courseList {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .tag {
   margin-top: 4px;
 }
 
-.sortByRating {
+.filtration {
+  display: flex;
+  align-items: center;
+  gap: 43px;
   margin-left: auto;
+}
+
+.active {
+  color: var(--primary);
+}
+
+@media screen and (width <= 840px) {
+  .filtration {
+    margin-left: 0;
+    width: 100%;
+  }
 }

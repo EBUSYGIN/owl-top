@@ -8,3 +8,6 @@ export * from "./PriceInfo/PriceInfo";
 export * from "./DottedLine/DottedLine";
 export * from "./CourseDetails/CourseDetails";
 export * from "./StaticRating/StaticRating";
+export * from "./DynamicRating/DynamicRating";
+export * from "./Textarea/Textarea";
+export * from "./SubmitNotification/SubmitNotification";
