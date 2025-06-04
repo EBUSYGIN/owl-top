@@ -1,13 +1,15 @@
-.inputBox {
+.textareaBox {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 20px;
 }
 
-.input {
-  width: 100%;
-  padding: 7px 15px;
+.textarea {
+  padding: 15px;
+
   border: none;
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
   background-color: var(--white);
   outline-color: var(--primary);
   border-radius: 5px;
@@ -15,9 +17,11 @@
 
 .error {
   position: absolute;
-  bottom: 4px;
+  bottom: 3px;
   left: 0;
+
   color: var(--light-red);
+
   font-weight: 400;
   font-size: 14px;
 }

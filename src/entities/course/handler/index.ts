@@ -1,5 +1,5 @@
 import { courseApi } from "../api";
-import { Course } from "../types";
+import { Course, CourseReview, CourseReviewResponse } from "../types";
 
 const getAllByCategory = async (limit: number, category?: string) => {
   try {
@@ -16,6 +16,21 @@ const getAllByCategory = async (limit: number, category?: string) => {
   }
 };
 
+const createReview = async (review: CourseReview) => {
+  try {
+    const response = await fetch(courseApi.createReview(), {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(review),
+    });
+
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const courseHandler = {
   getAllByCategory,
+  createReview,
 };

@@ -1,0 +1,36 @@
+.submitNotificationBox {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 200%;
+}
+
+.info {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.green {
+  background-color: var(--light-green);
+  color: var(--green);
+}
+
+.red {
+  background-color: var(--light-red);
+  color: var(--red);
+}
+
+.icon {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

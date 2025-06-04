@@ -129,7 +129,7 @@ export const CourseCard = motion.create(function CourseCard({
             }}
             transition={{ duration: 0.3 }}
           >
-            <ReviewList reviews={course.reviews} />
+            <ReviewList reviews={course.reviews} courseId={course._id} />
           </motion.div>
         )}
       </AnimatePresence>

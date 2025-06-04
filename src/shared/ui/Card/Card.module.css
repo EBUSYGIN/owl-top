@@ -12,3 +12,9 @@
 .purple {
   background-color: var(--primary-card);
 }
+
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 15px;
+  }
+}
