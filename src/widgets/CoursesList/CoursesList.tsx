@@ -1,6 +1,7 @@
 "use client";
 
 import cn from "classnames";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Button, Tag, Title } from "@/src/shared/ui";
 
@@ -50,16 +51,23 @@ export function CoursesList({ title, courses }: CoursesListProps) {
           </Button>
         </div>
       </header>
-      <ul className={styles.courseList}>
-        {sortedCourses.map((course) => (
-          <CourseCard
-            key={course._id}
-            course={course}
-            layout={true}
-            layoutRoot
-          />
-        ))}
-      </ul>
+      <motion.ul className={styles.courseList}>
+        <AnimatePresence initial={false}>
+          {sortedCourses.map((course) => (
+            <motion.li
+              key={course._id}
+              layout
+              transition={{
+                type: "spring",
+                damping: 25,
+                stiffness: 200,
+              }}
+            >
+              <CourseCard course={course} />
+            </motion.li>
+          ))}
+        </AnimatePresence>
+      </motion.ul>
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import cn from "classnames";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import Image from "next/image";
 
 import {
@@ -22,13 +22,13 @@ import styles from "./CourseCard.module.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReviewList } from "@/src/entities/review/ui/ReviewList/ReviewList";
 
-export const CourseCard = motion.create(function CourseCard({
+export const CourseCard = memo(function CourseCard({
   course,
 }: CourseCardProps) {
   const [isReviewOpen, setIsReviewOpen] = useState<boolean>(false);
 
   return (
-    <motion.div layout>
+    <>
       <Card>
         <div className={styles.top}>
           <div className={styles.topLeft}>
@@ -133,6 +133,6 @@ export const CourseCard = motion.create(function CourseCard({
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </>
   );
 });

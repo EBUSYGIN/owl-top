@@ -6,8 +6,6 @@ import styles from "./ReviewList.module.css";
 import { ReviewForm } from "@/src/features/course/ui";
 
 export function ReviewList({ reviews, courseId }: ReviewListProps) {
-  console.log("rerendered");
-
   return (
     <Card color="purple" className={styles.reviews}>
       {reviews.length > 0 ? (
