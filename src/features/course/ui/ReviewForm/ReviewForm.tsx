@@ -51,12 +51,14 @@ export function ReviewForm({ courseId }: ReviewFormProps) {
         />
         <Controller
           control={control}
+          rules={{ required: "Поставьте оценку" }}
           name="rating"
           render={({ field: { onChange, value } }) => (
             <DynamicRating
               className={styles.reviewRating}
               onChange={onChange}
               rating={value}
+              error={errors.rating?.message}
             />
           )}
         />

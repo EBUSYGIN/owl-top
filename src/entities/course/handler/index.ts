@@ -1,5 +1,5 @@
 import { courseApi } from "../api";
-import { Course, CourseReview, CourseReviewResponse } from "../types";
+import { Course, CourseReview } from "../types";
 
 const getAllByCategory = async (limit: number, category?: string) => {
   try {
