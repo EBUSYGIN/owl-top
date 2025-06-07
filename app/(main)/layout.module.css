@@ -5,11 +5,11 @@
 }
 
 .content {
+  position: relative;
+  display: flex;
   height: 100%;
   padding: 22px;
-  display: flex;
   gap: 33px;
-
   flex: 1;
 }
 
@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .layout .mobile {
     display: none;
   }
