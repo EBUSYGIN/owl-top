@@ -6,9 +6,9 @@
   padding-bottom: 18px;
 }
 
-.top > div {
+/* .top > div {
   flex: 1;
-}
+} */
 
 .topLeft {
   display: flex;
