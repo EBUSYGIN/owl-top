@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import styles from "./page.module.css";
 import { redirect } from "next/navigation";
 import { courseHandler } from "@/src/entities/course/handler";
-import { Advantages, CoursesList, Skills } from "@/src/widgets";
+import { Advantages, CoursesList, JobsData, Skills } from "@/src/widgets";
 
 export async function generateMetadata({
   params,
@@ -34,6 +34,7 @@ export default async function Courses({
   return (
     <div className={styles.page}>
       <CoursesList title={pageInfo.title} courses={courses || []} />
+      <JobsData data={pageInfo.hh} category={pageInfo.category} />
       <Advantages advantages={pageInfo.advantages} text={pageInfo.seoText} />
       <Skills skills={pageInfo.tags} />
     </div>

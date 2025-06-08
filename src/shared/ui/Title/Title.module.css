@@ -17,6 +17,11 @@
   font-size: 20px;
 }
 
+.s {
+  font-weight: 300;
+  font-size: 20px;
+}
+
 .black {
   color: var(--black);
 }

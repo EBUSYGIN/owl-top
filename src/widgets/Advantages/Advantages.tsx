@@ -21,6 +21,7 @@ export function Advantages({ advantages, text }: AdvantagesProps) {
       <p className={styles.text}>
         {text && text?.trim().length > 0
           ? text
+              .replace(/<[^>]*>/g, "")
               .split(/(?<=[.!?])\s+/)
               .slice(0, 3)
               .join(" ")

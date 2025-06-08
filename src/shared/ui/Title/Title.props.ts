@@ -4,6 +4,6 @@ export interface TitleProps
     HTMLHeadingElement
   > {
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  size?: "m" | "l" | "xl";
+  size?: "s" | "m" | "l" | "xl";
   color?: "black" | "primary";
 }
