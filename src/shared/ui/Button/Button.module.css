@@ -15,19 +15,11 @@
   transition: background-color 0.3s;
 }
 
-.primary:hover {
-  background-color: var(--primary-hover);
-}
-
 .ghost {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
   color: var(--black);
   transition: background-color 0.3s;
-}
-
-.ghost:hover {
-  background-color: var(--light-gray-hover);
 }
 
 .l {
@@ -49,4 +41,14 @@
   color: var(--black);
   font-size: 16px;
   font-weight: 400;
+}
+
+@media screen and (width > 768px) {
+  .ghost:hover {
+    background-color: var(--light-gray-hover);
+  }
+
+  .primary:hover {
+    background-color: var(--primary-hover);
+  }
 }

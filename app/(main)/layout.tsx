@@ -1,5 +1,4 @@
-import { headers } from "next/headers";
-import { Footer, Sidebar } from "@/src/widgets";
+import { Footer, ScrollToTopButton, Sidebar } from "@/src/widgets";
 import { MobileSidebarProvider } from "@/src/app/Providers/MobileSidebarProvider/MobileSidebarProvider";
 
 import styles from "./layout.module.css";
@@ -17,6 +16,7 @@ export default async function Layout({
         </MobileSidebarProvider>
         <Sidebar className={styles.mobile} />
         <main className={styles.main}>{children}</main>
+        <ScrollToTopButton />
       </div>
       <Footer />
     </div>

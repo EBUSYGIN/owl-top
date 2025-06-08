@@ -11,6 +11,7 @@ import Star from "../../assets/images/icons/star.svg";
 import User from "../../assets/images/icons/user.svg";
 import Arrow from "../../assets/images/icons/arrow.svg";
 import SmallClose from "../../assets/images/icons/small-close.svg";
+import Up from "../../assets/images/icons/up.svg";
 
 export const Icon = {
   Burger,
@@ -26,6 +27,7 @@ export const Icon = {
   User,
   Arrow,
   SmallClose,
+  Up,
 };
 
 export type IconType = keyof typeof Icon;
