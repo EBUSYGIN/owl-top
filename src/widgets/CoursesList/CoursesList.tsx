@@ -18,7 +18,7 @@ export function CoursesList({ title, courses }: CoursesListProps) {
   });
 
   return (
-    <>
+    <div>
       <header className={styles.header}>
         <div className={styles.titleTag}>
           <Title tag="h1" size="xl" color="black">
@@ -68,6 +68,6 @@ export function CoursesList({ title, courses }: CoursesListProps) {
           ))}
         </AnimatePresence>
       </motion.ul>
-    </>
+    </div>
   );
 }

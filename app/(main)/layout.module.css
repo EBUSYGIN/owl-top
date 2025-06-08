@@ -8,7 +8,8 @@
   position: relative;
   display: flex;
   height: 100%;
-  padding: 22px;
+  padding: 30px;
+  padding-bottom: 50px;
   gap: 33px;
   flex: 1;
 }
