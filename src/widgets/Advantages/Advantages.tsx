@@ -9,7 +9,7 @@ export function Advantages({ advantages, text }: AdvantagesProps) {
   return (
     <div>
       <Title tag="h3" size="m" color="black" className={styles.title}>
-        Преимущества
+        Преимущества:
       </Title>
       {advantages.map((advantage) => (
         <Advantage
