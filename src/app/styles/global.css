@@ -11,11 +11,13 @@
   --background-gray: #f5f6f8;
   --light-gray-hover: #ebebebed;
   --dashed-gray: #c4c4c4;
+  --icon-gray: #bbb;
   --advantages-gray: #d2d2d2;
   --light-green: #c8f8e4;
   --green: #0d9b60;
   --red: #de0000;
   --light-red: #f9a1a1;
+  --orange: #fc836d;
   --rating-star-color: #e2e2e2;
 }
 

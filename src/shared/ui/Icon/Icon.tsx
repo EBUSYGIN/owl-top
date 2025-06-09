@@ -13,6 +13,7 @@ import Arrow from "../../assets/images/icons/arrow.svg";
 import SmallClose from "../../assets/images/icons/small-close.svg";
 import Up from "../../assets/images/icons/up.svg";
 import AdvantageCheck from "../../assets/images/icons/advantage-check.svg";
+import JobStar from "../../assets/images/icons/job-star.svg";
 
 export const Icon = {
   Burger,
@@ -30,6 +31,7 @@ export const Icon = {
   SmallClose,
   Up,
   AdvantageCheck,
+  JobStar,
 };
 
 export type IconType = keyof typeof Icon;
