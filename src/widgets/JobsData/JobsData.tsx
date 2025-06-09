@@ -18,14 +18,14 @@ export function JobsData({ data, category }: JobsDataProps) {
         </Tag>
       </div>
       <div className={styles.infoWrapper}>
-        <Card className={styles.wrapper}>
+        <Card className={styles.card}>
           <Title size="s" tag="h4" color="black" className={styles.title}>
             Всего вакансий
           </Title>
           <span className={styles.count}>{formatter.format(data.count)}</span>
         </Card>
 
-        <Card color="ghost" className={styles.wrapper}>
+        <Card color="ghost" className={styles.card}>
           <Title size="s" tag="h4" color="black" className={styles.title}>
             Начальный
           </Title>
@@ -44,7 +44,7 @@ export function JobsData({ data, category }: JobsDataProps) {
           </span>
         </Card>
 
-        <Card color="ghost" className={styles.wrapper}>
+        <Card color="ghost" className={styles.card}>
           <Title size="s" tag="h4" color="black" className={styles.title}>
             Средний
           </Title>
@@ -63,7 +63,7 @@ export function JobsData({ data, category }: JobsDataProps) {
           </span>
         </Card>
 
-        <Card color="ghost" className={styles.wrapper}>
+        <Card color="ghost" className={styles.card}>
           <Title size="s" tag="h4" color="black" className={styles.title}>
             Профессионал
           </Title>
