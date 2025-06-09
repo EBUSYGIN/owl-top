@@ -1,6 +1,6 @@
-import cn from "classnames";
+import { JobDataCard } from "@/src/entities/page/ui";
+import { Card, Tag, Title } from "@/src/shared/ui";
 
-import { Card, Icon, Tag, Title } from "@/src/shared/ui";
 import { JobsDataProps } from "./JobsData.props";
 import styles from "./JobsData.module.css";
 
@@ -25,62 +25,23 @@ export function JobsData({ data, category }: JobsDataProps) {
           <span className={styles.count}>{formatter.format(data.count)}</span>
         </Card>
 
-        <Card color="ghost" className={styles.card}>
-          <Title size="s" tag="h4" color="black" className={styles.title}>
-            Начальный
-          </Title>
-          <span className={styles.salary}>
-            {formatter.format(data.juniorSalary)}
-          </span>
-          <span className={styles.starBlock}>
-            {Array.from({ length: 3 })
-              .fill(null)
-              .map((_, i) => (
-                <Icon.JobStar
-                  key={i}
-                  className={cn(styles.icon, { [styles.active]: i < 1 })}
-                />
-              ))}
-          </span>
-        </Card>
+        <JobDataCard
+          salary={data.juniorSalary}
+          countOfActiveStars={1}
+          title="Начальный"
+        />
 
-        <Card color="ghost" className={styles.card}>
-          <Title size="s" tag="h4" color="black" className={styles.title}>
-            Средний
-          </Title>
-          <span className={styles.salary}>
-            {formatter.format(data.middleSalary)}
-          </span>
-          <span className={styles.starBlock}>
-            {Array.from({ length: 3 })
-              .fill(null)
-              .map((_, i) => (
-                <Icon.JobStar
-                  key={i}
-                  className={cn(styles.icon, { [styles.active]: i < 2 })}
-                />
-              ))}
-          </span>
-        </Card>
+        <JobDataCard
+          salary={data.middleSalary}
+          countOfActiveStars={2}
+          title="Средний"
+        />
 
-        <Card color="ghost" className={styles.card}>
-          <Title size="s" tag="h4" color="black" className={styles.title}>
-            Профессионал
-          </Title>
-          <span className={styles.salary}>
-            {formatter.format(data.seniorSalary)}
-          </span>
-          <span className={styles.starBlock}>
-            {Array.from({ length: 3 })
-              .fill(null)
-              .map((_, i) => (
-                <Icon.JobStar
-                  key={i}
-                  className={cn(styles.icon, { [styles.active]: i < 3 })}
-                />
-              ))}
-          </span>
-        </Card>
+        <JobDataCard
+          salary={data.seniorSalary}
+          countOfActiveStars={3}
+          title="Профессионал"
+        />
       </div>
     </div>
   );
