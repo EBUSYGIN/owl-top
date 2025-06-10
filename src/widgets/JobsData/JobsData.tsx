@@ -1,4 +1,4 @@
-import { JobDataCard } from "@/src/entities/page/ui";
+import { JobCountCard, JobDataCard } from "@/src/entities/page/ui";
 import { Card, Tag, Title } from "@/src/shared/ui";
 
 import { JobsDataProps } from "./JobsData.props";
@@ -8,7 +8,7 @@ export function JobsData({ data, category }: JobsDataProps) {
   const formatter = new Intl.NumberFormat("ru-RU");
 
   return (
-    <div>
+    <div className={styles.jobData}>
       <div className={styles.titleWrapper}>
         <Title tag="h3" size="m" color="black">
           Вакансии - {category}
@@ -18,12 +18,7 @@ export function JobsData({ data, category }: JobsDataProps) {
         </Tag>
       </div>
       <div className={styles.infoWrapper}>
-        <Card className={styles.card}>
-          <Title size="s" tag="h4" color="black" className={styles.title}>
-            Всего вакансий
-          </Title>
-          <span className={styles.count}>{formatter.format(data.count)}</span>
-        </Card>
+        <JobCountCard count={data.count} />
 
         <JobDataCard
           salary={data.juniorSalary}
