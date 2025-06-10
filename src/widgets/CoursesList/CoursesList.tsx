@@ -9,7 +9,7 @@ import styles from "./CoursesList.module.css";
 import { CoursesListProps } from "./CoursesList.props";
 import { useReducer } from "react";
 import { sortReducer } from "@/src/shared/lib/sortReducer";
-import { CourseCard } from "@/src/entities/course/ui";
+import { CourseCard, EmptyCourseCard } from "@/src/entities/course/ui";
 
 export function CoursesList({ title, courses }: CoursesListProps) {
   const [{ sortedCourses, sort }, dispatchSort] = useReducer(sortReducer, {
@@ -28,46 +28,52 @@ export function CoursesList({ title, courses }: CoursesListProps) {
             {courses.length}
           </Tag>
         </div>
-        <div className={styles.filtration}>
-          <Button
-            appearance="filter"
-            className={cn({ [styles.active]: sort === "RATING" })}
-            icon={sort === "RATING" ? "Sort" : undefined}
-            onClick={() => {
-              dispatchSort("RATING");
-            }}
-          >
-            По рейтингу
-          </Button>
-          <Button
-            appearance="filter"
-            className={cn({ [styles.active]: sort === "PRICE" })}
-            icon={sort === "PRICE" ? "Sort" : undefined}
-            onClick={() => {
-              dispatchSort("PRICE");
-            }}
-          >
-            По цене
-          </Button>
-        </div>
-      </header>
-      <motion.ul className={styles.courseList}>
-        <AnimatePresence initial={false}>
-          {sortedCourses.map((course) => (
-            <motion.li
-              key={course._id}
-              layout
-              transition={{
-                type: "spring",
-                damping: 25,
-                stiffness: 200,
+        {courses.length > 0 && (
+          <div className={styles.filtration}>
+            <Button
+              appearance="filter"
+              className={cn({ [styles.active]: sort === "RATING" })}
+              icon={sort === "RATING" ? "Sort" : undefined}
+              onClick={() => {
+                dispatchSort("RATING");
               }}
             >
-              <CourseCard course={course} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </motion.ul>
+              По рейтингу
+            </Button>
+            <Button
+              appearance="filter"
+              className={cn({ [styles.active]: sort === "PRICE" })}
+              icon={sort === "PRICE" ? "Sort" : undefined}
+              onClick={() => {
+                dispatchSort("PRICE");
+              }}
+            >
+              По цене
+            </Button>
+          </div>
+        )}
+      </header>
+      {courses.length > 0 ? (
+        <motion.ul className={styles.courseList}>
+          <AnimatePresence initial={false}>
+            {sortedCourses.map((course) => (
+              <motion.li
+                key={course._id}
+                layout
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 200,
+                }}
+              >
+                <CourseCard course={course} />
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </motion.ul>
+      ) : (
+        <EmptyCourseCard />
+      )}
     </div>
   );
 }

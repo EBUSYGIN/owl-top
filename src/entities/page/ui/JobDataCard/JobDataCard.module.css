@@ -41,3 +41,11 @@
 .active {
   color: var(--orange);
 }
+
+@media screen and (width <= 935px) {
+  .card:nth-child(2),
+  .card:nth-child(3) {
+    border-right: none;
+    border-bottom: 1px solid var(--light-gray);
+  }
+}
