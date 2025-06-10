@@ -1,6 +1,5 @@
 import { Title } from "@/src/shared/ui";
-
-import { Advantage } from "@/src/entities/course/ui";
+import { Advantage } from "@/src/entities/page/ui";
 
 import { AdvantagesProps } from "./Advantages.props";
 import styles from "./Advantages.module.css";
