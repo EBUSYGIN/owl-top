@@ -1,7 +1,6 @@
 .header {
   margin-bottom: 60px;
   text-wrap: pretty;
-
   text-align: justify; /* Выравнивание по ширине */
   hyphens: auto;
 }
@@ -13,20 +12,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-
   margin-bottom: 60px;
 }
 
 .middleText,
 .aboutText {
   max-width: 600px;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
-
   color: var(--gray);
-
   text-wrap: pretty;
   text-align: justify; /* Выравнивание по ширине */
   hyphens: auto;
@@ -36,9 +31,13 @@
 .aboutImage {
   mask-image: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 1) 40%,
-    rgba(0, 0, 0, 0) 100%
+    rgb(0 0 0 / 100%) 40%,
+    rgb(0 0 0 / 0%) 100%
   );
+}
+
+.aboutText {
+  color: var(--black);
 }
 
 .actions {
@@ -46,7 +45,7 @@
   gap: 30px;
 }
 
-@media screen and (max-width: 1254px) {
+@media screen and (width <= 1254px) {
   .homeImage,
   .aboutImage {
     width: 300px;
@@ -57,12 +56,13 @@
   .aboutText {
     max-width: 300px;
   }
+
   .actions {
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (width <= 950px) {
   .middle,
   .aboutSection {
     flex-direction: column;

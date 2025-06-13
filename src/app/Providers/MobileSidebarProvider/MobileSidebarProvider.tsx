@@ -1,13 +1,13 @@
-"use client";
-import { motion } from "framer-motion";
-import cn from "classnames";
+'use client';
+import { motion } from 'framer-motion';
+import cn from 'classnames';
 
-import { usePathname } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
-import { Button } from "@/src/shared/ui";
+import { usePathname } from 'next/navigation';
+import { ReactNode, useEffect, useState } from 'react';
+import { Button } from '@/src/shared/ui';
 
-import styles from "./MobileSidebarProvider.module.css";
-import { Logo } from "@/src/features/navigation/logo/ui";
+import styles from './MobileSidebarProvider.module.css';
+import { Logo } from '@/src/features/navigation/logo/ui';
 
 export function MobileSidebarProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export function MobileSidebarProvider({ children }: { children: ReactNode }) {
     },
     closed: {
       opacity: 0,
-      x: "100%",
+      x: '100%',
     },
   };
 
@@ -34,9 +34,10 @@ export function MobileSidebarProvider({ children }: { children: ReactNode }) {
       <div className={styles.mobileHeader}>
         <Logo />
         <Button
-          appearance="ghost"
-          icon="Burger"
-          size="s"
+          appearance='ghost'
+          icon='Burger'
+          size='s'
+          aria-label='кнопка открытия мобильного меню'
           onClick={() => setIsOpen(true)}
         />
       </div>
@@ -44,15 +45,16 @@ export function MobileSidebarProvider({ children }: { children: ReactNode }) {
       <motion.div
         className={styles.mobileMenu}
         variants={variants}
-        initial={"closed"}
-        animate={isOpen ? "opened" : "closed"}
+        initial={'closed'}
+        animate={isOpen ? 'opened' : 'closed'}
       >
         <Button
-          appearance="ghost"
-          icon="Close"
-          size="s"
+          appearance='ghost'
+          icon='Close'
+          size='s'
           className={styles.mobileButton}
           onClick={() => setIsOpen(false)}
+          aria-label='кнопка закрытия мобильного меню'
         />
         {children}
       </motion.div>

@@ -1,5 +1,5 @@
 :root {
-  --primary: #7653fc;
+  --primary: #7351f5;
   --primary-hover: #947afa;
   --primary-card: #f9f8ffe2;
   --white: #fff;
@@ -14,9 +14,9 @@
   --icon-gray: #bbb;
   --advantages-gray: #d2d2d2;
   --light-green: #c8f8e4;
-  --green: #0d9b60;
+  --green: #127a4f;
   --red: #de0000;
-  --light-red: #f9a1a1;
+  --light-red: #ff6363;
   --orange: #fc836d;
   --rating-star-color: #e2e2e2;
 }
