@@ -1,25 +1,25 @@
-"use client";
-import Link from "next/link";
-import cn from "classnames";
+'use client';
+import Link from 'next/link';
+import cn from 'classnames';
 
-import { Icon } from "../Icon/Icon";
-import { ButtonProps } from "./Button.props";
+import { Icon } from '../Icon/Icon';
+import { ButtonProps } from './Button.props';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
 export function Button({
   children,
   className,
-  appearance = "primary",
-  size = "m",
+  appearance = 'primary',
+  size = 'm',
   icon,
-  typeOf = "button",
-  href = "",
+  typeOf = 'button',
+  href = '',
   ...props
 }: ButtonProps) {
   const IconComponent = icon ? Icon[icon] : null;
 
-  if (typeOf === "button") {
+  if (typeOf === 'button') {
     return (
       <button
         className={cn(
@@ -36,7 +36,7 @@ export function Button({
     );
   }
 
-  if (typeOf === "a") {
+  if (typeOf === 'a') {
     return (
       <a
         className={cn(
@@ -46,7 +46,7 @@ export function Button({
           className
         )}
         href={href}
-        target="_blank"
+        target='_blank'
       >
         {IconComponent && <IconComponent className={styles.icon} />}
         {children}
@@ -54,7 +54,7 @@ export function Button({
     );
   }
 
-  if (typeOf === "link") {
+  if (typeOf === 'link') {
     return (
       <Link
         className={cn(

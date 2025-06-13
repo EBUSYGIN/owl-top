@@ -10,7 +10,7 @@ export function JobsData({ data, category }: JobsDataProps) {
   return (
     <div className={styles.jobData}>
       <div className={styles.titleWrapper}>
-        <Title tag='h3' size='m' color='black'>
+        <Title tag='h4' size='m' color='black'>
           Вакансии - {category}
         </Title>
         <Tag size='m' color='red'>

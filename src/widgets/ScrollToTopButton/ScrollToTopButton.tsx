@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import cn from "classnames";
-import { useAnimation, motion } from "framer-motion";
-import { useEffect } from "react";
+import cn from 'classnames';
+import { useAnimation, motion } from 'framer-motion';
+import { useEffect } from 'react';
 
-import { Button, Icon } from "@/src/shared/ui";
-import { useYScroll } from "@/src/shared/hooks";
+import { Button, Icon } from '@/src/shared/ui';
+import { useYScroll } from '@/src/shared/hooks';
 
-import styles from "./ScrollToTopButton.module.css";
+import styles from './ScrollToTopButton.module.css';
 
 export function ScrollToTopButton() {
   const controls = useAnimation();
@@ -19,7 +19,7 @@ export function ScrollToTopButton() {
 
   const scrollToTop = () => {
     window.scrollTo({
-      behavior: "smooth",
+      behavior: 'smooth',
       top: 0,
     });
   };
@@ -30,7 +30,12 @@ export function ScrollToTopButton() {
       animate={controls}
       initial={{ opacity: 0 }}
     >
-      <Button size="s" className={cn(styles.button)} onClick={scrollToTop}>
+      <Button
+        size='s'
+        className={cn(styles.button)}
+        onClick={scrollToTop}
+        aria-label='кнопка скролла вверх'
+      >
         <Icon.Up />
       </Button>
     </motion.div>

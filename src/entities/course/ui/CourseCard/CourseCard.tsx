@@ -1,8 +1,8 @@
-"use client";
-import cn from "classnames";
+'use client';
+import cn from 'classnames';
 
-import { memo, useState } from "react";
-import Image from "next/image";
+import { memo, useState } from 'react';
+import Image from 'next/image';
 
 import {
   Button,
@@ -14,13 +14,13 @@ import {
   StaticRating,
   Tag,
   Title,
-} from "@/src/shared/ui";
+} from '@/src/shared/ui';
 
-import { CourseCardProps } from "./CourseCard.props";
+import { CourseCardProps } from './CourseCard.props';
 
-import styles from "./CourseCard.module.css";
-import { AnimatePresence, motion } from "framer-motion";
-import { ReviewList } from "@/src/entities/review/ui/ReviewList/ReviewList";
+import styles from './CourseCard.module.css';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ReviewList } from '@/src/entities/review/ui/ReviewList/ReviewList';
 
 export const CourseCard = memo(function CourseCard({
   course,
@@ -34,18 +34,18 @@ export const CourseCard = memo(function CourseCard({
           <div className={styles.topLeft}>
             <Image
               src={course.image}
-              alt="Иконка курса"
+              alt='Иконка курса'
               width={70}
               height={70}
               className={styles.image}
             />
             <div className={styles.info}>
-              <Title tag="h3" size="m" color="black">
+              <Title tag='h2' size='m' color='black'>
                 {course.title}
               </Title>
               <div className={styles.categories}>
                 {course.categories?.map((category, i) => (
-                  <Tag size="m" color="ghost" key={i}>
+                  <Tag size='m' color='ghost' key={i}>
                     {category}
                   </Tag>
                 ))}
@@ -57,12 +57,12 @@ export const CourseCard = memo(function CourseCard({
             <PriceInfo
               price={course.price}
               oldPrice={course.oldPrice}
-              blockName="Цена"
+              blockName='Цена'
             />
             <PriceInfo
               price={course.credit}
-              blockName="Кредит"
-              additionalPriceInfo="/мес"
+              blockName='Кредит'
+              additionalPriceInfo='/мес'
             />
             <StaticRating
               initialRating={course.initialRating}
@@ -79,7 +79,7 @@ export const CourseCard = memo(function CourseCard({
               ))}
               <div className={styles.tags}>
                 {course.tags.map((tag, i) => (
-                  <Tag key={i} size="m" color="ghost">
+                  <Tag key={i} size='m' color='ghost'>
                     {tag}
                   </Tag>
                 ))}
@@ -92,10 +92,10 @@ export const CourseCard = memo(function CourseCard({
           </div>
         </div>
         <div className={styles.actions}>
-          <Button size="m">Узнать подробнее</Button>
+          <Button size='m'>Узнать подробнее</Button>
           <Button
-            size="m"
-            appearance="ghost"
+            size='m'
+            appearance='ghost'
             onClick={() => setIsReviewOpen((prevState) => !prevState)}
           >
             Читать отзывы
@@ -113,18 +113,18 @@ export const CourseCard = memo(function CourseCard({
             initial={{ opacity: 0, height: 0 }}
             animate={{
               opacity: 1,
-              height: "auto",
+              height: 'auto',
               transition: {
-                height: { duration: 0.3, ease: "easeOut" },
-                opacity: { duration: 0.2, ease: "linear" },
+                height: { duration: 0.3, ease: 'easeOut' },
+                opacity: { duration: 0.2, ease: 'linear' },
               },
             }}
             exit={{
               opacity: 0,
               height: 0,
               transition: {
-                height: { duration: 0.25, ease: "easeIn" },
-                opacity: { duration: 0.15, ease: "linear" },
+                height: { duration: 0.25, ease: 'easeIn' },
+                opacity: { duration: 0.15, ease: 'linear' },
               },
             }}
             transition={{ duration: 0.3 }}
